@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Introduccion a Fracciones</title>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        *{
+            background-image: linear-gradient( 83.2deg,  rgba(150,93,233,1) 10.8%, rgba(99,88,238,1) 94.3% );
+            padding: 0px;
+            margin: 0px;
+            color: white;
+            /*border: 2px solid blue;*/
+        }
+
+        .cuerpo{
+        }
+
+        .cuerpo .encabezado{
+            /*Fuentes*/
+            font-family: Arial;
+            color: white;
+            font-size: 18px;
+
+            /*Fondo*/
+            background: transparent;
+            
+            margin-top: 1%;
+            margin-bottom: 2%;
+            justify-content: center;
+            display: flex;
+            align-items: center;
+        }
+
+        .encabezado #ubicacion{
+            background: transparent;
+            font-size: 16px;
+            color: #CACACA;
+        }
+
+        .encabezado #titulo{
+            background: transparent;
+
+            /*font-family: 'Raleway',sans-serif;*/
+            margin-right: 30%;
+            margin-left: 18%;
+            font-size: 19px;
+            color: white;
+            /*font-weight: bold;*/
+        }
+
+        .encabezado .return{
+            background: transparent;
+
+            cursor:pointer;
+            vertical-align: middle;
+            align-items: center;
+            display: flex;
+        }
+
+        .encabezado .return .text{
+            background: transparent;
+            
+            font-size: 16px;
+            color: #CACACA;
+            animation: 1s anim-lineDown ease-out;
+            opacity: 0;
+        }
+        .encabezado .return:hover .text{
+            animation: 1s anim-lineUp ease-out;
+            opacity: 1;
+            transform: translatex(0%);
+        }
+        @keyframes anim-lineUp {
+            0% {
+                opacity: 0;
+                transform: translatex(80%);
+            }
+            20% {
+                opacity: 0;
+            }
+            50% {
+                opacity: 1;
+                transform: translatex(0%);
+            }
+            100% {
+                opacity: 1;
+                transform: translatex(0%);
+            }
+        }
+        @keyframes anim-lineDown {
+            0% {
+                opacity: 1;
+                transform: translatex(0%);
+            }
+            20% {
+                opacity: 1;
+                transform: translatex(0%);
+            }
+            50% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 0;
+                transform: translatex(80%);
+            }
+        }
+
+        .encabezado .return img{
+            background: transparent;
+
+            margin-left: 6px;
+            width: 18px;
+            height: 18px;
+        }
+
+
+        .di-1{
+            background: transparent;
+            font-family: 'Helvetica Neue', sans-serif;
+            margin-top: 10%;
+        }
+
+        .di-1 #subtitulo{
+            background: transparent;
+            font-family: 'Helvetica Neue', sans-serif; 
+            font-size: 35px; 
+            font-weight: bold; 
+            letter-spacing: -1px; 
+            line-height: 1; 
+            text-align: center;
+            weight: bold;
+        }
+        .di-1 .explicacion{
+            background: transparent;
+            margin-top: 10%;
+            justify-content: center;
+            display: flex;
+            align-items: center;
+            margin-bottom: 10%;
+        }
+        .di-1 .explicacion #texto{
+            background: transparent;
+            font-family: 'Open Sans', sans-serif; 
+            font-size: 20px; 
+        }
+        .di-1 .explicacion #cuadrado{
+            margin-right: 10%;
+            background: #53FF38;
+            width: 150px;
+            height: 150px;
+            box-shadow:0px 5px 8px 5px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+        }
+
+        .di-2 {
+            background: transparent;
+            font-family: 'Helvetica Neue', sans-serif;
+            margin-top: 18%;
+        }
+        .di-2 .explicacion{
+            background: transparent;
+            margin-top: 3%;
+            justify-content: center;
+            display: flex;
+            align-items: center;
+            margin-bottom: 10%;
+        }
+        .di-2 .explicacion #texto{
+            background: transparent;
+            font-family: 'Open Sans', sans-serif; 
+            font-size: 20px; 
+        }
+        .di-2 .explicacion .cuadrado{
+            margin-right: 10%;
+            background: transparent;
+        }
+        .di-2 .explicacion .cuadrado #rectangulo-1{
+            margin-right: 10%;
+            background: #53FF38;
+            width: 150px;
+            height: 75px;
+            box-shadow: 0px -5px 8px 5px rgba(0, 0, 0, 0.2);
+            border-radius: 10px 10px 0px 0px;
+        }
+        .di-2 .explicacion .cuadrado #rectangulo-2{
+            margin-top: 10%;
+            margin-right: 10%;
+            background: #53FF38;
+            width: 150px;
+            height: 75px;
+            box-shadow: 0px 5px 8px 5px rgba(0, 0, 0, 0.2);
+            border-radius:0px 0px 10px 10px;
+        }
+
+        .di-3 {
+            background: transparent;
+            font-family: 'Helvetica Neue', sans-serif;
+            margin-top: 18%;
+        }
+        .di-3 .explicacion{
+            background: transparent;
+            margin-top: 3%;
+            justify-content: center;
+            display: flex;
+            align-items: center;
+            margin-bottom: 10%;
+        }
+        .di-3 .explicacion #texto{
+            background: transparent;
+            font-family: 'Open Sans', sans-serif; 
+            font-size: 20px; 
+        }
+        .di-3 .explicacion .cuadrado{
+            margin-right: 10%;
+            background: transparent;
+        }
+        .di-3 .explicacion .cuadrado .rectangulo-1{
+            margin-right: 10%;
+            margin-bottom: 10%;
+            display: flex;
+            background: transparent;
+            width: 160px;
+            height: 75px;
+        }
+        .di-3 .explicacion .cuadrado .rectangulo-1 #cuadrado-1{
+            margin-right: 10%;
+            margin-bottom: 10%;
+            display: flex;
+            background: #53FF38;
+            width: 75px;
+            height: 75px;
+            box-shadow: 0px -5px 8px 5px rgba(0, 0, 0, 0.2);
+            border-radius: 6px 6px 0px 0px;
+        }
+        .di-3 .explicacion .cuadrado .rectangulo-1 #cuadrado-2{
+            margin-right: 10%;
+            margin-bottom: 10%;
+            display: flex;
+            background: #53FF38;
+            width: 75px;
+            height: 75px;
+            box-shadow: 0px -5px 8px 5px rgba(0, 0, 0, 0.2);
+            border-radius: 6px 6px 0px 0px;
+        }
+        .di-3 .explicacion .cuadrado .rectangulo-2{
+            margin-right: 10%;
+            display: flex;
+            background: transparent;
+            width: 160px;
+            height: 75px;
+        }
+        .di-3 .explicacion .cuadrado .rectangulo-2 #cuadrado-1{
+            margin-right: 10%;
+            display: flex;
+            background: #53FF38;
+            width: 75px;
+            height: 75px;
+            box-shadow: 0px 5px 8px 5px rgba(0, 0, 0, 0.2);
+            border-radius: 0px 0px 6px 6px;
+        }
+        .di-3 .explicacion .cuadrado .rectangulo-2 #cuadrado-2{
+            margin-right: 10%;
+            display: flex;
+            background: #53FF38;
+            width: 75px;
+            height: 75px;
+            box-shadow: 0px 5px 8px 5px rgba(0, 0, 0, 0.2);
+            border-radius: 0px 0px 6px 6px;
+        }
+        .di-4 {
+            background: transparent;
+            font-family: 'Helvetica Neue', sans-serif;
+            margin-top: 22%;
+        }
+        .di-4 .explicacion{
+            background: transparent;
+            margin-top: 3%;
+            justify-content: center;
+            display: flex;
+            align-items: center;
+            margin-bottom: 10%;
+        }
+        .di-4 .explicacion #texto{
+            background: transparent;
+            font-family: 'Open Sans', sans-serif; 
+            font-size: 20px;
+            text-align: center; 
+        }
+        .di-5 {
+            background: transparent;
+            font-family: 'Helvetica Neue', sans-serif;
+            margin-top: 22%;
+        }
+        .di-5 .explicacion{
+            background: transparent;
+            margin-top: 10%;
+            justify-content: center;
+            display: flex;
+            align-items: center;
+            margin-bottom: 10%;
+        }
+        .di-5 .explicacion #texto{
+            background: transparent;
+            font-family: 'Open Sans', sans-serif; 
+            font-size: 20px; 
+        }
+        .di-5 .explicacion .rectangulos{
+            margin-right: 5%;
+            background: transparent;
+        }
+        .di-5 .explicacion .rectangulos #rectangulo-1{
+            margin-right: 10%;
+            background: #53FF38;
+            width: 150px;
+            height: 75px;
+            box-shadow: 0px -5px 8px 5px rgba(0, 0, 0, 0.2);
+            border-radius: 10px 10px 0px 0px;
+        }
+        .di-5 .explicacion .rectangulos #rectangulo-2{
+            margin-top: 10%;
+            margin-right: 10%;
+            background: #53FF38;
+            width: 150px;
+            height: 75px;
+            box-shadow: 0px 5px 8px 5px rgba(0, 0, 0, 0.2);
+            border-radius:0px 0px 10px 10px;
+        }
+        .di-5 .explicacion #cuadrado{
+            margin-left: 5%;
+            margin-right: 7%;
+            background: #53FF38;
+            width: 150px;
+            height: 150px;
+            box-shadow:0px 5px 8px 5px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+        }
+        .di-5 .explicacion #flecha{
+            background: transparent;
+            font-size: 50px; 
+        }
+        
+        .di-6 {
+            background: transparent;
+            font-family: 'Helvetica Neue', sans-serif;
+            margin-top: 22%;
+        }
+        .di-6 .explicacion{
+            background: transparent;
+            margin-top: 10%;
+            justify-content: center;
+            display: flex;
+            align-items: center;
+            margin-bottom: 10%;
+        }
+        .di-6 .explicacion #texto{
+            background: transparent;
+            font-family: 'Open Sans', sans-serif; 
+            font-size: 20px; 
+        }
+        .di-6 .explicacion #texto{
+            background: transparent;
+            font-family: 'Open Sans', sans-serif; 
+            font-size: 20px; 
+        }
+        .di-6 .explicacion .Fraccion{
+            background: transparent;
+            display: flex;
+            margin-right: 10%;
+        }
+        .di-6 .explicacion .Fraccion #flecha1{
+            background: transparent;
+            font-size: 35px;
+            transform: translate(0, -5%);
+            margin-right: 5%;
+        }
+        .di-6 .explicacion .Fraccion #flecha2{
+            background: transparent;
+            font-size: 35px;
+            transform: rotate(180deg);
+            margin-left: 5%;
+        }
+        .di-6 .explicacion .Fraccion #fraccion-t{
+            background: transparent;
+            font-size: 65px;
+        }
+    </style>
+</head>
+
+
+<body class="cuerpo">
+    <header class="encabezado">
+        <div id="ubicacion">
+           > Nivel 1 - Fracciones - Introducción
+        </div>
+
+        <div id="titulo">
+            Imagina un cuadrado...
+        </div>
+
+        <div class="return" data-aos="fade-left">
+            <div class="text">
+                Regresar
+            </div>
+            <img src="access/imagenes/return_icon.png" alt="Regresar" onclick="redirectHome()">
+        </div>
+    </header>
+    <div class="di-1" data-aos="zoom-in">
+        <div id="subtitulo">
+            Imagina que tienes un cuadrado
+        </div>
+
+        <div class="explicacion">
+            <div id="cuadrado"></div>
+            <div id="texto">
+                Este cuadrado es un "1" un entero o un todo <br>
+                el cuadrado representa algo completo.
+            </div>
+        </div>
+    </div>
+    <div class="di-2">
+        <div class="explicacion">
+            <div class="cuadrado" data-aos="fade-up">
+                <div id="rectangulo-1" data-aos="fade-right"></div>
+                <div id="rectangulo-2" data-aos="fade-left"></div>
+            </div>
+            <div id="texto" data-aos="fade-down">
+                Si a este cuadrado lo partes en dos pedazos, <br>
+                se convertirá en dos rectángulos
+            </div>
+        </div>
+    </div>
+    <div class="di-3">
+        <div class="explicacion">
+            <div class="cuadrado">
+                <div class="rectangulo-1">
+                    <div id="cuadrado-1" data-aos="fade-right"></div>
+                    <div id="cuadrado-2" data-aos="fade-left"></div>
+                </div>
+                <div class="rectangulo-2">
+                    <div id="cuadrado-1" data-aos="fade-right"></div>
+                    <div id="cuadrado-2" data-aos="fade-left"></div>
+                </div>
+            </div>
+            <div id="texto" data-aos="fade-down">
+                Y así seguirá convirtiéndose en cuadrados y <br>
+                rectángulos entre más partas los pedazos
+            </div>
+        </div>
+    </div>
+    <div class="di-4">
+        <div class="explicacion">
+            <div id="texto" data-aos="flip-left">
+                ¿Pero cómo puedes llamar o representar <br>
+                esto en números o matemáticas?
+            </div>
+        </div>
+    </div>
+    <div class="di-5">
+        <div class="explicacion">
+            <div class="rectangulos" data-aos="zoom-in">
+                <div id="rectangulo-1" data-aos="zoom-in"></div>
+                <div id="rectangulo-2" data-aos="zoom-in"></div>
+            </div>
+            <div id="flecha" data-aos="zoom-in">➠</div>
+            <div id="cuadrado" data-aos="zoom-in"></div>
+            <div id="texto" data-aos="zoom-out-left">
+                Simple, tenemos “2” rectángulos <br>
+                que forman “1” cuadrado.
+            </div>
+        </div>
+    </div>
+    <div class="di-6">
+        <div class="explicacion">
+            <div class="Fraccion" >
+                <div id="flecha1" data-aos="fade-up">➠</div>
+                <div id="fraccion-t" data-aos="zoom-in">
+                    ½
+                </div>
+                <div id="flecha2" data-aos="fade-down">➠</div>
+            </div>
+            <div id="texto" data-aos="zoom-out-left">
+                Simple, tenemos “2” rectángulos <br>
+                que forman “1” cuadrado.
+            </div>
+        </div>
+    </div>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        function redirectHome() {
+            window.location.href = "http://mathle.ga/Nivel-1/Fracciones/";
+        }
+        AOS.init();
+    </script>
+</body>
