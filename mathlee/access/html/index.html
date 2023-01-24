@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Mathle</title>
+</head>
+
+<header>
+    <div>
+        {% if request.user.is_authenticated %}
+            <h2>Mathle - Bienvenido {{ user.username | upper}}</h2>
+        {% else %}
+            <h2>Mathle</h2>
+        {% endif %}
+    </div>
+    <ul>
+        <li><a href="">Nosotros</a></li>
+        <li><a href="">Donde surge la idea?</a></li>
+        <li><a href="">Plan de estudios</a></li>
+        <li><a href="">Contacto</a></li>
+        {% if request.user.is_authenticated %}
+            <li><a href={% url 'dashboard' %}>Panel</a></li>
+            <li><a href={% url 'logout' %}>Salir</a></li>
+        {% else %}
+            <li><a href={% url 'login' %}>Iniciar sesion</a></li>
+            <li><a href={% url 'register' %}>Registrate</a></li>
+        {% endif %}
+    </ul>
+</header>
+
+<body>
+
+</body>
