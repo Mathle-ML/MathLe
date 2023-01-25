@@ -55,7 +55,9 @@ ROOT_URLCONF = 'mathlee.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['C:/Users/Nestor Emmanuel/DjangoWorkspaces/mathlee/mathlee/access/'],
+        'DIRS': ['C:/Users/Nestor Emmanuel/DjangoWorkspaces/mathlee/mathlee/access/',
+                 'C:/ProyectosDjango/MathLe/mathlee/access',
+                 'C:/ProyectosDjango/MathLe/mathlee/access/html'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

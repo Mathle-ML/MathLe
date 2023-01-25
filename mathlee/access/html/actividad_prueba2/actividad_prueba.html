@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actividad 1</title>
+</head>
+<body>
+    
+    <div>
+        <h1>Actividad 1</h1>
+        <h2>Sumas y restas</h2>
+    </div>
+
+    <div>
+        <form action="{% url 'resultado' r1 r2 r3 r4 r5 %}" method="get">
+            <div>
+                <p>Cuanto es {{ var1_1 }} + {{ var1_2 }}?</p>
+                <input type="text" name="res1">
+            </div>
+            <div>
+                <p>Cuanto es {{ var2_1 }} + {{ var2_2 }}?</p>
+                <input type="text" name="res2">
+            </div>
+            <div>
+                <p>Cuanto es {{ var3_1 }} + {{ var3_2 }}?</p>
+                <input type="text" name="res3">
+            </div>
+            <div>
+                <p>Cuanto es {{ var4_1 }} + {{ var4_2 }}?</p>
+                <input type="text" name="res4">
+            </div>
+            <div>
+                <p>Cuanto es {{ var5_1 }} + {{ var5_2 }}?</p>
+                <input type="text" name="res5">
+            </div>
+            <div>
+                <input type="submit" name="Terminar">
+            </div>
+        </form>
+    </div>
+
+</body>
+</html>
