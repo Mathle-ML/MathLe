@@ -74,33 +74,33 @@ def actividad_prueba(request):
         "r5":var5_1 + var5_2,
     }
 
-    """s = 1
-    for s in range(30):
-        print(s)
-        time.sleep(1)
-    """
-
     return render(request, "actividad_prueba2/actividad_prueba.html", ctx)
 
 def resultado(request,r1,r2,r3,r4,r5):
 
-    res1 = int(request.GET["res1"])
-    res2 = int(request.GET["res2"])
-    res3 = int(request.GET["res3"])
-    res4 = int(request.GET["res4"])
-    res5 = int(request.GET["res5"])
+    res1 = request.GET["res1"]
+    res2 = request.GET["res2"]
+    res3 = request.GET["res3"]
+    res4 = request.GET["res4"]
+    res5 = request.GET["res5"]
 
     res = 0
+    s = "string cualquiera"
 
-    if res1 == r1:
+    if res1 == "" or res2 == "" or res3 == "" or res4 == "" or res5 == "":
+        s = "No respondiste todas las preguntas, puedes volver a ver estas actividades"
+    
+    if res1 == str(r1):
         res += 1
-    if res2 == r2:
+    if res2 == str(r2):
         res += 1
-    if res3 == r3:
+    if res3 == str(r3):
         res += 1
-    if res4 == r4:
+    if res4 == str(r4):
         res += 1
-    if res5 == r5:
-        res += 1    
+    if res5 == str(r5):
+        res += 1
 
-    return render(request, "actividad_prueba2/resultado.html", {"res":res})
+    print("res =",res)  
+
+    return render(request, "actividad_prueba2/resultado.html", {"res":res, "s":s})

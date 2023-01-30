@@ -5,6 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Actividad 1</title>
+
+    <style>
+        #BarTime {
+            background-color: cornflowerblue;
+            height: 20px;
+            width: 300px;
+        }
+    </style>
+
 </head>
 <body>
     
@@ -14,6 +23,9 @@
     </div>
 
     <div>
+
+        <div id="BarTime"></div>
+
         <form action="{% url 'resultado' r1 r2 r3 r4 r5 %}" method="get">
             <div>
                 <p>Cuanto es {{ var1_1 }} + {{ var1_2 }}?</p>
@@ -36,10 +48,37 @@
                 <input type="text" name="res5">
             </div>
             <div>
-                <input type="submit" name="Terminar">
+                <input type="submit" id="terminar" name="Terminar">
             </div>
         </form>
     </div>
+
+    <script>
+
+        var time=30, w = 310;
+        
+        function cambia() {                
+            time--;
+            w -= 10;
+            document.getElementById("BarTime").style.width = w+'px';
+            document.getElementById("BarTime").innerHTML = time;
+            console.log("time = "+time+" w = "+w);
+            if (time <= 0){
+                terminar();
+            }
+        }
+
+        function terminar() {
+            document.getElementById("terminar").click();
+        }
+
+        function inicio() {
+            var i = setInterval(cambia, 1000);
+        }
+        
+        window.onload=inicio;
+        
+    </script>
 
 </body>
 </html>

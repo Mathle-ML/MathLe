@@ -10,7 +10,13 @@
     
     <h1>Resultado</h1>
     
+    {% if s != 'No respondiste todas las preguntas, puedes volver a ver estas actividades' %}
     <p>Tuviste {{ res }} de 5 resupestas correctas </p>
+    {% else %}
+    <p>Tuviste {{ res }} de 5 resupestas correctas </p>
+    <p>{{ s }}</p>
+    <a href={% url 'index' %}>index</a>
+    {% endif %}
 
 </body>
 </html>
