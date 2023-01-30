@@ -14,11 +14,9 @@
 <header>
         <div class="header_container">
             <div class="header_part_left">
-                <a class="hd_pl" href="">Nosotros</a>
-                <a class="hd_pl" href="">Donde surge la idea?</a>
-                <a class="hd_pl" href="">Plan de estudios</a>
-                <a class="hd_pl" href="">Contacto</a>
+                <a class="hd_pl" href="">☰</a>
             </div>
+            <div class="logo">MathLe</div>
             <div class="header_part_right">
                 {% if request.user.is_authenticated %}
                     <a class="hd_pl" href={% url 'dashboard' %}>Dashboard - {{ user.username | upper}}</a>
@@ -30,7 +28,28 @@
             </div>
         </div>
 </header>
-
 <body>
+    <div class="rpd">
+        <div class="left">❮</div>
+        <div class="slide">
+            <div class="title">
+                Mathle
+            </div>
+            <div class="subtitle">
+                tu solucion para aprender!
+            </div>
+        </div>
+        <div class="right">❯</div>
+    </div>
+    <div class="subtext">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque laoreet, est consectetur tempus suscipit, enim arcu viverra nunc, eget bibendum diam magna a quam. Vestibulum non felis ante. Etiam sit amet pretium est, sed tempor arcu. Phasellus eu risus a enim tincidunt iaculis. Vestibulum vehicula orci interdum nibh sollicitudin interdum. Donec fringilla felis eget felis eleifend, vel imperdiet magna consectetur. Fusce eleifend ipsum non nunc rhoncus porttitor.
 
+Duis vel purus eros. Duis ut mi magna. Suspendisse ut eros accumsan, cursus turpis ac, gravida leo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Phasellus eget mattis lacus, egestas semper libero. Ut pellentesque tellus sagittis diam consequat lacinia. Phasellus cursus, justo eget suscipit hendrerit, nulla dolor sodales purus, sit amet ullamcorper arcu felis a sem. Fusce quis posuere lorem. Nam viverra mi magna, ut vestibulum odio ullamcorper quis. In finibus finibus nisi in convallis. Cras dapibus quis enim ut gravida. Etiam in tellus eu dolor suscipit eleifend. Pellentesque eu porttitor lacus. In fermentum malesuada volutpat. Integer ut mi mi. Phasellus posuere quam vel elit sagittis cursus.
+
+Suspendisse nec blandit sem. Vivamus egestas ipsum eget mi volutpat, ultricies congue mi suscipit. Cras facilisis aliquam sagittis. Sed id purus quam. Integer felis felis, aliquet eget tempus at, molestie ut nibh. In rutrum ultrices posuere. Duis mollis ac mauris vel consequat. Donec fringilla turpis sit amet risus fermentum, nec venenatis mauris ultrices. Curabitur lacinia lectus eleifend tellus ultrices, a ullamcorper neque accumsan. Cras blandit, mi eu venenatis finibus, lorem sem mattis nibh, maximus rutrum dolor diam sit amet lectus. Quisque vitae imperdiet nisl, nec aliquet ante. Praesent ac dapibus dolor, ac ornare leo.
+
+Nulla facilisi. In a aliquam erat. Integer ut lacinia felis. Etiam leo quam, dignissim vitae vulputate eu, maximus quis nibh. Etiam tempus ultrices diam ut tincidunt. Quisque non sem imperdiet velit vehicula fringilla eget sed felis. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Mauris vitae ex rutrum, auctor diam et, pellentesque urna. Nunc eget pellentesque mauris.
+
+Proin ligula felis, finibus ut facilisis ut, tempor vitae tellus. Vivamus non purus ligula. Mauris sollicitudin ultricies sapien, non scelerisque orci ullamcorper eget. Nulla auctor sapien vel mi pellentesque, blandit ultricies purus porttitor. Aenean ultrices scelerisque neque eget convallis. Curabitur ipsum nulla, dignissim sit amet ullamcorper id, varius sit amet ante. Aliquam eleifend pharetra gravida. Vivamus in interdum nibh. Phasellus non odio justo. Nullam nisi ex, rutrum sit amet sodales sed, commodo et lectus. In luctus libero a nibh dignissim consequat. Aenean vitae cursus lacus. Vivamus cursus molestie purus, vel ornare ipsum laoreet et. Curabitur quam velit, vehicula ac dapibus in, dapibus a ex. Curabitur sodales tempus eros, vitae dapibus magna iaculis ac. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae;
+    </div>
 </body>

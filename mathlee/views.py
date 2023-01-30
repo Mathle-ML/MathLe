@@ -7,12 +7,12 @@ from django.contrib.auth import logout
 from .forms import CustomCreationForm
 from random import *
 import time
+import os
 from pathlib import Path
 
 def index(request):
     BASE_DIR = Path(__file__).resolve().parent.parent
     print(str(BASE_DIR) + "asd")
-    file = 'html/index.html'
 
     ctx = {}
     return render(request, 'html/index.html', ctx)

@@ -2,46 +2,96 @@
     margin: 0px;
     padding: 0px;
     color: wheat;
+    background: rgb(54,1,94);
+    
     font-family: sans-serif;
     text-decoration: none;
 }
 
-header {
-    background-color: blueviolet;
-    border: solid;
-    border-width: 1px;
-    border-color: blueviolet;
-}
-
 .header_container {
-    margin-top: .5%;
+    border: solid;
+    border-radius: 1px;
+    border-color: rgb(36, 36, 36);
+    background: rgb(36, 36, 36);
     margin-bottom: .5%;
     display: flex;
     justify-content: space-between;
 }
 
 .header_part_left{
-    margin: .5%;
-    width: 50%;
+    background: none;
+    margin: 1%;
     display: inline-block;
 }
 
+.header_part_right{
+    background: none;
+    margin: 1%;
+    display: flex;
+}
+
 .hd_pl{
+    background: none;
     text-align: center;
     color: rgb(240, 240, 240);
     margin-left: 2%;
     margin-right: 2%;
+    white-space: nowrap;
 }
 .hd_pl:hover{
     color: rgb(215, 215, 215);
 }
 
-.header_part_right{
-    margin: .5%;
-    width: 15%;
-    display: inline-block;
+
+
+.rpd {
+    background: none;
+    margin-top: 5%;
+    color: rgb(240, 240, 240);
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    justify-content: space-between;
+    display: flex;
 }
 
+.left {
+    background: none;
+    font-size: 100px;
+    color: rgb(240, 240, 240);
+    margin-left: 2%;
+}
+
+.right {
+    background: none;
+    font-size: 100px;
+    color: rgb(240, 240, 240);
+    margin-right: 2%;
+}
+
+.rpd .slide {
+    background: none;
+}
+
+.rpd .slide .title{
+    background: none;
+    margin: 0;
+    padding: 0;
+    color: rgb(240, 240, 240);
+    font-size: 200px;
+}
+
+.rpd .slide .subtitle{
+    background: none;
+    margin-top: -3%;
+    padding: 0;
+    color: rgb(235, 235, 235);
+    font-size: 50px;
+}
+
+.subtext{
+    margin-top: 10%;
+}
 /*.header_part_left#hed_item {
     margin: 100px;
     padding: 5px;
