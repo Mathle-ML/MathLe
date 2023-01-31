@@ -78,7 +78,7 @@ def actividad_prueba(request):
         "r5":var5_1 + var5_2,
     }
 
-    return render(request, "actividad_prueba2/actividad_prueba.html", ctx)
+    return render(request, "html/actividad_prueba2/actividad_prueba.html", ctx)
 
 def resultado(request,r1,r2,r3,r4,r5):
 
@@ -107,4 +107,4 @@ def resultado(request,r1,r2,r3,r4,r5):
 
     print("res =",res)  
 
-    return render(request, "actividad_prueba2/resultado.html", {"res":res, "s":s})
+    return render(request, "html/actividad_prueba2/resultado.html", {"res":res, "s":s})
