@@ -9,6 +9,7 @@
     <title>Mathle</title>
     {% load static %}
     <link rel="stylesheet" href="{% static 'css/index.css' %}">
+    <link rel="icon" type="image/x-icon" href="{% static 'img/logo.png' %}">
 </head>
 
 <header>
@@ -16,14 +17,17 @@
             <div class="header_part_left">
                 <a class="hd_pl" href="">☰</a>
             </div>
-            <div class="logo">MathLe</div>
+            <div class="logo">
+                <img src="{% static 'img/logo.png' %}" alt="logo">
+                <h2> MathLe </h2>
+            </div>
             <div class="header_part_right">
                 {% if request.user.is_authenticated %}
                     <a class="hd_pl" href={% url 'dashboard' %}>Dashboard - {{ user.username | upper}}</a>
                     <a class="hd_pl" href={% url 'logout' %}>Salir</a>
                 {% else %}
-                    <a class="hd_pl" href={% url 'login' %}>Iniciar sesion</a>
-                    <a class="hd_pl" href={% url 'register' %}>Registrate</a>
+                    <a class="hd_pl" name="start" href={% url 'login' %}>Iniciar sesion</a>
+                    <a class="hd_pl" name="end" href={% url 'register' %}>Registrate</a>
                 {% endif %}
             </div>
         </div>
@@ -33,7 +37,7 @@
         <div class="left">❮</div>
         <div class="slide">
             <div class="title">
-                Mathle
+                MathLe
             </div>
             <div class="subtitle">
                 tu solucion para aprender!
