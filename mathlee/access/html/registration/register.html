@@ -1,0 +1,52 @@
+<!DOCTYPE django-html>
+
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Mathle - Registrarte</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/register.css' %}">
+</head>
+
+<body>
+    <div class="formCont">
+        <form action="" method="post">
+            <h2 class="title">Registrarte</h2>
+            <div class="subform">
+                {% csrf_token %}
+                
+                {{ form.username.label_tag }}
+                {{ form.username }}
+                <h2 class="helptext">Requerido. 150 carácteres como máximo. Únicamente letras, dígitos y @/./+/-/_</h2>
+                
+                <br>
+                
+                {{ form.password1.label_tag }}
+                {{ form.password1 }}
+                <ul class="helptext">
+                    <li class="helptext">Su contraseña no puede asemejarse tanto a su otra información personal.</li>
+                    <li class="helptext">Su contraseña debe contener al menos 8 caracteres.</li>
+                    <li class="helptext">Su contraseña no puede ser una clave utilizada comúnmente.</li>
+                    <li class="helptext">Su contraseña no puede ser completamente numérica.</li>
+                </ul>
+                
+                <br>
+                
+                <label for="password2">Confirmar contraseña: </label>
+                {{ form.password2 }}
+                <h2 class="helptext">Para verificar, introduzca la misma contraseña anterior</h2>
+                
+                <br>
+            </div>
+            {% if haserrors %}
+                <div class="alert-info">El registro es invalido, vuelve a intentarlo</div>
+            {% else %}
+                <div class="alert-info"></div>
+            {% endif %}
+            <button type="sumit">Registrarte</button>
+        </form>
+    </div>
+</body>

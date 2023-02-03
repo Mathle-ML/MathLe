@@ -3,12 +3,14 @@ from django.http import HttpResponse
 from django.contrib.auth.decorators import login_required
 from django.template import Template, Context, loader
 from django.shortcuts import redirect, render
-from django.contrib.auth import logout
+from django.contrib.auth import logout, authenticate, login
+from django.contrib.auth.models import User
 from .forms import CustomCreationForm
 from random import *
 import time
 import os
 from pathlib import Path
+from django.contrib import messages
 
 def index(request):
     BASE_DIR = Path(__file__).resolve().parent.parent
@@ -25,17 +27,32 @@ def dashboard(request):
 
     return HttpResponse(html)
 
-def login(request):
-    doc = loader.get_template('html/login.html')
-    ctx = {}
-    html = doc.render(ctx)
-
-    return HttpResponse(html)
-
 def loginCall(request):
-    ispost = False
+    page = 'login'
+
+    if request.user.is_authenticated:
+        return redirect('index')
+
     if request.method == 'POST':
-        ispost = True
+        username = request.POST['username'].lower()
+        password = request.POST['password']
+
+        try:
+            user = User.objects.get(username=username)
+        except:
+            messages.error(request, 'El usuario no existe')
+            return render(request, 'html/registration/login.html')
+
+        user = authenticate(request, username=username, password=password)
+
+        if user is not None:
+            login(request, user)
+            return redirect(request.GET['next'] if 'next' in request.GET else 'index')
+
+        else:
+            messages.error(request, 'El usuario o contraseña son incorrectos')
+
+    return render(request, 'html/registration/login.html')
 
 def exit(request):
     logout(request)
@@ -43,9 +60,24 @@ def exit(request):
 
 def register(request):
     ctx = {
-        'form' : CustomCreationForm()
+        'form' : CustomCreationForm(),
+        'haserrors' : False
     }
-    return render(request, 'registration/register.html', ctx)
+
+    if request.method == 'POST':
+        user_creation_form = CustomCreationForm(data=request.POST)
+
+        if user_creation_form.is_valid():
+            user_creation_form.save()
+
+            user = authenticate(request, username=user_creation_form.cleaned_data['username'], password=user_creation_form.cleaned_data['password1'])
+            
+            login(request, user)
+            return redirect('index')
+        else:
+            ctx['haserrors'] = True
+
+    return render(request, 'html/registration/register.html', ctx)
 
 
 #views de carpeta actividad_prueba2
