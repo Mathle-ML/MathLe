@@ -21,9 +21,10 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('index/', index, name='index'),
     path('dashboard/', dashboard, name='dashboard'),
-    path('accounts/',  include('django.contrib.auth.urls')),
+    path('login/', loginCall, name='login'),
     path('logout/', exit, name='logout'),
     path('register/', register, name='register'),
+
     path('actividad_prueba2/', actividad_prueba, name='act'),
     path('resultado/<int:r1>/<int:r2>/<int:r3>/<int:r4>/<int:r5>/', resultado, name='resultado'),
 ]
