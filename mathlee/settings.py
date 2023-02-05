@@ -120,7 +120,8 @@ USE_TZ = True
 STATIC_URL = 'C:/ProyectosDjango/MathLe/mathlee/static/'
 
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'mathlee/static/')
+    os.path.join(BASE_DIR, 'mathlee/static/'),
+    BASE_DIR / 'static'
 ]
 
 # Default primary key field type
