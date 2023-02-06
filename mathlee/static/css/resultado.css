@@ -1,0 +1,59 @@
+* {
+    font-family: 'Montserrat';
+    margin: 0px;
+    padding: 0px;
+    background-color: rgb(105, 23, 168);
+    background-image: url(/static/img/back3.jpg);
+    background-blend-mode: multiply;
+    background-repeat: repeat;
+    background-size: cover;
+
+}
+
+h1, p, a {
+    background: none;
+}
+
+h1 {
+    color: white;
+    text-align: center;
+}
+
+.ans {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    margin: 0 20%;
+    margin-top: 3%;
+    border-radius: 20px;
+    min-height: 40vh;
+
+    background: none;
+    background-color: white;
+    color: black;
+
+    text-align: center;
+}
+
+.box {
+    padding: .5% 1%;
+    background-color: rgb(119, 236, 146);
+    border-radius: 7px;
+    color: white;
+}
+
+p {
+    margin: 0 10%;
+}
+
+a {
+    margin: 2%;
+    transition: all 1s ease;
+}
+
+a:hover {
+    color: rgb(119, 236, 146);
+    transition: all 1s ease;
+}

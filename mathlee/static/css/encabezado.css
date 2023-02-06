@@ -8,6 +8,10 @@
     display: flex;
 }
 
+a {
+    text-decoration: none;
+}
+
 .header_part_left{
     background: none;
     margin: auto;

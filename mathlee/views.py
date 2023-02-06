@@ -121,10 +121,11 @@ def resultado(request,r1,r2,r3,r4,r5):
     res5 = request.GET["res5"]
 
     res = 0
-    s = "string cualquiera"
+    s = "false"
+    bol = "false"
 
     if res1 == "" or res2 == "" or res3 == "" or res4 == "" or res5 == "":
-        s = "No respondiste todas las preguntas, puedes volver a ver estas actividades"
+        s = "true"
     
     if res1 == str(r1):
         res += 1
@@ -137,6 +138,7 @@ def resultado(request,r1,r2,r3,r4,r5):
     if res5 == str(r5):
         res += 1
 
-    print("res =",res)  
+    if res <= 2:
+        bol = "true"
 
-    return render(request, "html/actividad_prueba2/resultado.html", {"res":res, "s":s})
+    return render(request, "html/actividad_prueba2/resultado.html", {"res":res, "s":s, "bol":bol})
