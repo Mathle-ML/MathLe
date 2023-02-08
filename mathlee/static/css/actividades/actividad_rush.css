@@ -93,11 +93,11 @@ div h1, div h2 {
     border-radius: 20px;
     width: 110%;
 
-    transition: all 1s ease
+    transition: all 0.7s ease
 }
 
 #terminar:hover {
-    transition: all 1s ease;
+    transition: all 0.7s ease;
     background-color: black;
     color: white;
 }

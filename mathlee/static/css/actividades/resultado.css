@@ -55,5 +55,5 @@ a {
 
 a:hover {
     color: rgb(119, 236, 146);
-    transition: all 1s ease;
+    transition: all 0.7s ease;
 }

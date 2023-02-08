@@ -80,6 +80,12 @@ def register(request):
     return render(request, 'html/registration/register.html', ctx)
 
 
+def actividad_T(request):
+
+    return render(request, 'html/actividad_prueba2/actividad_T.html')
+
+
+
 #views de carpeta actividad_prueba2
 def actividad_prueba(request):
 
