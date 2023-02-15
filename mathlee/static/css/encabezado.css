@@ -1,0 +1,293 @@
+@import url(https://use.fontawesome.com/releases/v5.0.6/css/all.css);
+@import url(https://fonts.googleapis.com/css?family=Oswald:400|Raleway:400,700,400italic,700italic);
+
+
+.container{
+    background: none;
+}
+nav {
+    background:none;
+    left: 0;
+    position: relative;
+    top: 0;
+    width: 100%;
+    z-index: 9999;
+    margin: 0%;
+    padding: 0%;
+}
+
+/*** INPUT ***/
+nav input {
+    background: none;
+    opacity: 0;
+    position: absolute;
+    z-index: -1;
+}
+
+/*** LABEL ***/
+nav label {
+    width: 3%;
+    background: none;
+    cursor: pointer;
+    display: block;
+    font: 2em/1 'Oswald', sans-serif;
+    padding: 0.5em;
+}
+
+/* Hamburger Icon */
+#menu-icon,
+#menu-icon:before,
+#menu-icon:after {
+    background: #c9c9c9;
+    transition: all 0.2s ease-in-out;
+    width: 100%;
+}
+
+#menu-icon {
+    width: 1vw;
+    height: .1vw;
+    position: relative;
+    
+}
+
+nav label #menu-icon {
+    float: left;
+}
+
+#menu-icon:before,
+#menu-icon:after {
+    content: '';
+    height: .1vw;
+    left: 0;
+    position: absolute;
+}
+
+#menu-icon:before {
+    top: .5vw;
+}
+
+#menu-icon:after {
+    bottom: .5vw;
+}
+
+/* Close Icon */
+nav input[type=checkbox]:checked + label #menu-icon {
+    background: none;
+}
+
+nav input[type=checkbox]:checked + label #menu-icon:before {
+    width: 1.4vw;
+    top: .4vw;
+    transform: rotate(-45deg);
+}
+
+nav input[type=checkbox]:checked + label #menu-icon:after {
+    width: 1.4vw;
+    top: .4vw;
+    bottom: 0;
+    transform: rotate(45deg);
+}
+
+
+/*** MENU ***/
+/* Overlay */
+nav input:checked ~ #overlay {
+    background: rgb(36, 36, 36);
+    box-shadow: 4px 4px 5px 0px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 4px 4px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 4px 4px 5px 0px rgba(0,0,0,0.75);
+    bottom: 0;
+    left: -67.6vw;
+    height: 50vw;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100vw;
+    z-index: -1;
+}
+
+nav input:checked ~ .list {
+    margin-top: 2%;
+}
+
+/* List */
+nav .list {
+    background: none;
+    font-size: 1.5vw;
+    list-style: none;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    text-align: center;
+    background: none;
+    margin: auto;
+}
+
+nav input:checked ~ .list {
+    max-height: inherit;
+    opacity: 1;
+    background: none;
+}
+
+.a {
+    border-top: 2px double rgb(20, 20, 20);
+    border-bottom: 2px double rgb(20, 20, 20);
+    height: 4vw;
+    background: rgb(45, 45, 45);
+    color: rgb(215, 215, 215);
+    text-decoration: none;
+    margin: -1px;
+    padding: 0;
+    padding-top: 2.5vw;
+}
+
+.a:hover {
+    background: rgb(55, 55, 55);
+    text-decoration: underline;
+}
+
+
+
+
+
+
+
+.header_container {
+    border: solid;
+    border-radius: 1px;
+    height: 3.5vw;
+    border-color: rgb(36, 36, 36);
+    background: rgb(36, 36, 36);
+    margin-bottom: .5%;
+    display: flex;
+
+    /*Propiedades para el header constante
+    right: 0;
+    top: 0;
+    left: 0;
+    position: fixed;*/
+}
+
+.header_part_left{
+    background: none;
+    margin: auto;
+    margin-left: -.3vw;
+    display: inline-block;
+    width: 33%;
+}
+
+.header_part_right{
+    background: none;
+    margin: auto;
+    display: flex;
+    justify-content: right;
+    width: 33%;
+}
+
+.hd_pl{
+    background: none;
+    font-size: 1.1vw;
+    text-align: center;
+    color: rgb(240, 240, 240);
+    white-space: nowrap;
+    margin-right: 5%;
+}
+
+.hd_pl:hover{
+    color: rgb(215, 215, 215);
+}
+
+.logo{
+    background: none;
+    width: 33%;
+    justify-content: center;
+    display: inline-flex;
+    margin: auto;
+    align-items: center;
+    cursor:pointer;
+}
+
+.logo h2{
+    font-size: 1.5vw;
+    background: none;
+    color: rgb(240, 240, 240);
+    animation: 3s anim-lineDown ease-out;
+    opacity: 0;
+    
+}
+
+.logo img{
+    background: none;
+    width: 2.2vw;
+    height: 2.2vw;
+    animation: 1.5s anim-lineDown-logo ease-out;
+    transform: translatex(80%);
+}
+
+.logo:hover h2{
+    animation: 1s anim-lineUp ease-out;
+    opacity: 1;
+    transform: translatex(0%);
+}
+
+.logo:hover img{
+    animation: 1s anim-lineUp-logo ease-out;
+    opacity: 1;
+    transform: translatex(0%);
+}
+
+@keyframes anim-lineUp {
+    0% {
+        opacity: 0;
+    }
+    20% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@keyframes anim-lineDown {
+    0% {
+        opacity: 1;
+    }
+    20% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes anim-lineUp-logo {
+    0% {
+        transform: translatex(80%);
+    }
+    20% {
+    }
+    50% {
+        transform: translatex(0%);
+    }
+    100% {
+        transform: translatex(0%);
+    }
+}
+@keyframes anim-lineDown-logo {
+    0% {
+        transform: translatex(0%);
+    }
+    20% {
+        transform: translatex(0%);
+    }
+    50% {
+    }
+    100% {
+        transform: translatex(80%);
+    }
+}

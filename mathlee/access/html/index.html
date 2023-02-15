@@ -8,52 +8,19 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Mathle</title>
     {% load static %}
-    <link rel="stylesheet" href="{% static 'css/index.scss' %}">
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
     <link rel="icon" type="image/x-icon" href="{% static 'img/logo.png' %}">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 </head>
 
 
+{% include 'encabezado/encabezado.html' %}
 
-<input type="checkbox" id="menu" />
-<label for="menu" class="menu">
-	<span></span>
-	<span></span>
-	<span></span>
-</label>
-
-<nav class="nav">
-	<ul>
-		<li><a href="#">Home</a></li>
-		<li><a href="#">About</a></li>
-		<li><a href="#">Works</a></li>
-		<li><a href="#">Contact</a></li>
-	</ul>
-</nav>
-
-
-
-<main>
-<header>
-        <div class="header_container">
-            <div class="header_part_left">
-                <a class="hd_pl" href="">☰</a>
-            </div>
-            <div class="logo">
-                <img src="{% static 'img/logo.png' %}" alt="logo">
-                <h2> MathLe </h2>
-            </div>
-            <div class="header_part_right">
-                {% if request.user.is_authenticated %}
-                    <a class="hd_pl" href={% url 'dashboard' %}>Dashboard - {{ user.username | upper}}</a>
-                    <a class="hd_pl" href={% url 'logout' %}>Salir</a>
-                {% else %}
-                    <a class="hd_pl" name="start" href={% url 'login' %}>Iniciar sesion</a>
-                    <a class="hd_pl" name="end" href={% url 'register' %}>Registrate</a>
-                {% endif %}
-            </div>
-        </div>
-</header>
 <body>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+    AOS.init();
+</script>
     <div class="rpd">
         <div class="left">❮</div>
         <div class="slide">
@@ -66,16 +33,65 @@
         </div>
         <div class="right">❯</div>
     </div>
-    <div class="subtext">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque laoreet, est consectetur tempus suscipit, enim arcu viverra nunc, eget bibendum diam magna a quam. Vestibulum non felis ante. Etiam sit amet pretium est, sed tempor arcu. Phasellus eu risus a enim tincidunt iaculis. Vestibulum vehicula orci interdum nibh sollicitudin interdum. Donec fringilla felis eget felis eleifend, vel imperdiet magna consectetur. Fusce eleifend ipsum non nunc rhoncus porttitor.
-
-Duis vel purus eros. Duis ut mi magna. Suspendisse ut eros accumsan, cursus turpis ac, gravida leo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Phasellus eget mattis lacus, egestas semper libero. Ut pellentesque tellus sagittis diam consequat lacinia. Phasellus cursus, justo eget suscipit hendrerit, nulla dolor sodales purus, sit amet ullamcorper arcu felis a sem. Fusce quis posuere lorem. Nam viverra mi magna, ut vestibulum odio ullamcorper quis. In finibus finibus nisi in convallis. Cras dapibus quis enim ut gravida. Etiam in tellus eu dolor suscipit eleifend. Pellentesque eu porttitor lacus. In fermentum malesuada volutpat. Integer ut mi mi. Phasellus posuere quam vel elit sagittis cursus.
-
-Suspendisse nec blandit sem. Vivamus egestas ipsum eget mi volutpat, ultricies congue mi suscipit. Cras facilisis aliquam sagittis. Sed id purus quam. Integer felis felis, aliquet eget tempus at, molestie ut nibh. In rutrum ultrices posuere. Duis mollis ac mauris vel consequat. Donec fringilla turpis sit amet risus fermentum, nec venenatis mauris ultrices. Curabitur lacinia lectus eleifend tellus ultrices, a ullamcorper neque accumsan. Cras blandit, mi eu venenatis finibus, lorem sem mattis nibh, maximus rutrum dolor diam sit amet lectus. Quisque vitae imperdiet nisl, nec aliquet ante. Praesent ac dapibus dolor, ac ornare leo.
-
-Nulla facilisi. In a aliquam erat. Integer ut lacinia felis. Etiam leo quam, dignissim vitae vulputate eu, maximus quis nibh. Etiam tempus ultrices diam ut tincidunt. Quisque non sem imperdiet velit vehicula fringilla eget sed felis. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Mauris vitae ex rutrum, auctor diam et, pellentesque urna. Nunc eget pellentesque mauris.
-
-Proin ligula felis, finibus ut facilisis ut, tempor vitae tellus. Vivamus non purus ligula. Mauris sollicitudin ultricies sapien, non scelerisque orci ullamcorper eget. Nulla auctor sapien vel mi pellentesque, blandit ultricies purus porttitor. Aenean ultrices scelerisque neque eget convallis. Curabitur ipsum nulla, dignissim sit amet ullamcorper id, varius sit amet ante. Aliquam eleifend pharetra gravida. Vivamus in interdum nibh. Phasellus non odio justo. Nullam nisi ex, rutrum sit amet sodales sed, commodo et lectus. In luctus libero a nibh dignissim consequat. Aenean vitae cursus lacus. Vivamus cursus molestie purus, vel ornare ipsum laoreet et. Curabitur quam velit, vehicula ac dapibus in, dapibus a ex. Curabitur sodales tempus eros, vitae dapibus magna iaculis ac. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae;
+    <div class="seccion1" id="QuienesSomos">
+        <img data-aos="fade-right" src="{% static 'img/acerca-de.png' %}">
+        <div data-aos="fade-right" class="text">
+            <h2>¿Quienes somos?</h2>
+            <h3>Somos un pequeño grupo de estudiantes que asi como miles
+                de estudianes tuvimos un problema con el aprendeizaje que 
+                en dia se practica.</h3>
+        </div>
+    </div>
+    <div class="seccion2">
+        <div data-aos="fade-right" class="text">
+            <h2>¿Cual es nuestro objetivo?</h2>
+            <h3>Somos un pequeño grupo de estudiantes que asi como miles
+                de estudianes tuvimos un problema con el aprendeizaje que 
+                en dia se practica. Somos un pequeño grupo de estudiantes que asi como miles
+                de estudianes tuvimos un problema con el aprendeizaje que 
+                en dia se practica.</h3>
+        </div>
+        <img data-aos="fade-right" src="{% static 'img/goals.png' %}">
+    </div>
+    <div class="seccion3" id="QuienesSomos">
+        <nav class="planeacion" data-aos="fade-right">
+            <div class="lvl-1">
+                <input id="cb-lvl1" type="checkbox">
+                <label for="cb-lvl1"><h2>Nivel 1</h2></label>
+                <div class="temas">
+                    <h2>Tema 1</h2>
+                    <h2>Tema 2</h2>
+                    <h2>Tema 3</h2>
+                </div>
+            </div>
+            <div class="lvl-2">
+                <input id="cb-lvl2" type="checkbox">
+                <label for="cb-lvl2"><h2>Nivel 2</h2></label>
+            </div>
+            <div class="lvl-3">
+                <input id="cb-lvl3" type="checkbox">
+                <label for="cb-lvl3"><h2>Nivel 3</h2></label>
+            </div>
+            <div class="lvl-4">
+                <input id="cb-lvl4" type="checkbox">
+                <label for="cb-lvl4"><h2>Nivel 4</h2></label>
+            </div>
+        </nav>
+        <div data-aos="fade-right" class="text">
+            <h2>Plan de estudios</h2>
+            <h3>Nuestro plan de estudios se basa en niveles que cubran
+                el nivel de estudio al que se encuentra el usuario sin rodeos
+                y con una mejor explicacion.
+            </h3>
+        </div>
+    </div>
+    <div class="seccion4" id="QuienesSomos">
+        <img data-aos="fade-right" src="{% static 'img/acerca-de.png' %}">
+        <div data-aos="fade-right" class="text">
+            <h2>¿Quienes somos?</h2>
+            <h3>Somos un pequeño grupo de estudiantes que asi como miles
+                de estudianes tuvimos un problema con el aprendeizaje que 
+                en dia se practica.</h3>
+        </div>
     </div>
 </body>
-</main>
