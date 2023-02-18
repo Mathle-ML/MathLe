@@ -17,10 +17,6 @@
 {% include 'encabezado/encabezado.html' %}
 
 <body>
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-<script>
-    AOS.init();
-</script>
     <div class="rpd">
         <div class="left">❮</div>
         <div class="slide">
@@ -56,25 +52,40 @@
     <div class="seccion3" id="QuienesSomos">
         <nav class="planeacion" data-aos="fade-right">
             <div class="lvl-1">
-                <input id="cb-lvl1" type="checkbox">
+                <input class="cbTopic" id="cb-lvl1" type="checkbox">
                 <label for="cb-lvl1"><h2>Nivel 1</h2></label>
-                <div class="temas">
+                <div class="temas" id="temas-1">
                     <h2>Tema 1</h2>
                     <h2>Tema 2</h2>
                     <h2>Tema 3</h2>
                 </div>
             </div>
             <div class="lvl-2">
-                <input id="cb-lvl2" type="checkbox">
+                <input class="cbTopic" id="cb-lvl2" type="checkbox">
                 <label for="cb-lvl2"><h2>Nivel 2</h2></label>
+                <div class="temas" id="temas-2">
+                    <h2>Tema 1</h2>
+                    <h2>Tema 2</h2>
+                    <h2>Tema 3</h2>
+                </div>
             </div>
             <div class="lvl-3">
-                <input id="cb-lvl3" type="checkbox">
+                <input class="cbTopic" id="cb-lvl3" type="checkbox">
                 <label for="cb-lvl3"><h2>Nivel 3</h2></label>
+                <div class="temas" id="temas-3">
+                    <h2>Tema 1</h2>
+                    <h2>Tema 2</h2>
+                    <h2>Tema 3</h2>
+                </div>
             </div>
             <div class="lvl-4">
-                <input id="cb-lvl4" type="checkbox">
+                <input class="cbTopic" id="cb-lvl4" type="checkbox">
                 <label for="cb-lvl4"><h2>Nivel 4</h2></label>
+                <div class="temas" id="temas-4">
+                    <h2>Tema 1</h2>
+                    <h2>Tema 2</h2>
+                    <h2 class="last">Tema 3</h2>
+                </div>
             </div>
         </nav>
         <div data-aos="fade-right" class="text">
@@ -95,3 +106,8 @@
         </div>
     </div>
 </body>
+
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script src="static/js/seccion3.js"></script>
+<script>
+</script>

@@ -63,6 +63,12 @@
     display: none;
 }
 
+nav .temas .last{
+    border-radius: 0px 0px 10px 10px;
+    -webkit-border-radius: 0px 0px 10px 10px;
+    -moz-border-radius: 0px 0px 10px 10px;
+}
+
 .seccion3 nav h2 {
     background: none;
     margin: -2px;
@@ -71,11 +77,24 @@
     color: white;
 }
 
-.temas{
-    display: none;
+nav .temas h2:hover{
+    background-color: aqua;
 }
 
-.lvl-1 input[type=checkbox]:checked + label{
+.temas{
+    height: 0;
+    background-color: rgb(41, 41, 41);
+    transition: height .2s, background-color .2s;
+    transition-delay: .1s;
+}
+
+nav input + label + .temas > h2{
+    animation: .1s desv ease-out;
+    color:rgb(200, 200, 200);
+    opacity: 0;
+}
+
+nav .lvl-1 input[type=checkbox]:checked + label{
     display: block;
     font-size: 1.6vw;
     background: none;
@@ -84,12 +103,50 @@
     -webkit-border-radius: 10px 10px 0px 0px;
     -moz-border-radius: 10px 10px 0px 0px;
 }
-input[type=checkbox]:checked + label + .temas{
-    display: block;
+
+nav .lvl-4 input[type=checkbox]:checked + label + .temas{
+    height: 12vw;
     background-color: rgb(41, 41, 41);
+    transition: height .2s, background-color .2s;
+    border-radius: 0px 0px 10px 10px;
+    -webkit-border-radius: 0px 0px 10px 10px;
+    -moz-border-radius: 0px 0px 10px 10px;
 }
-input[type=checkbox]:checked + label + .temas > h2{
+
+nav input[type=checkbox]:checked + label{
+    display: block;
+    font-size: 1.6vw;
+    background: none;
+    background-color: forestgreen;
+}
+nav input[type=checkbox]:checked + label + .temas{
+    height: 12vw;
+    background-color: rgb(41, 41, 41);
+    transition: height .2s, background-color .2s;
+}
+
+@keyframes desv {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes apar {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+nav input[type=checkbox]:checked + label + .temas > h2{
+    animation: .4s apar ease-out;
     color:rgb(200, 200, 200);
+    opacity: 1;
 }
 
 .seccion3 .text {
