@@ -113,7 +113,7 @@ nav .lvl-4 input[type=checkbox]:checked + label + .temas{
     -moz-border-radius: 0px 0px 10px 10px;
 }
 
-nav input[type=checkbox]:checked + label{
+.seccion3 nav input[type=checkbox]:checked + label{
     display: block;
     font-size: 1.6vw;
     background: none;

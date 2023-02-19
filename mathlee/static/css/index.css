@@ -151,44 +151,72 @@
 /*SECCION 4---------------------*/
 .seccion4{
     background:transparent;
-    display: flex;
-    vertical-align: middle;
-    align-items: center;
-    text-align: justify;
+    text-align: center;
     background-color: rgba(105, 100, 168, 0.9);
     box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.51);
     -webkit-box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.51);
     -moz-box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.51);
 }
 
-.seccion4 img{
-    background: none;
-    width: 25vw;
-    height: 25vw;
-    margin: 7%;
-    filter: invert(0.9);
-}
-
-.seccion4 .text {
+.seccion4 .text, .seccion4 .text h2, .seccion4 .text h3,
+.seccion4 .reg_butt, .seccion4 input, .seccion4 .reg_butt button{
     background: none;
 }
 
-.seccion4 h2{
-    background: none;
+.seccion4 .text{
+    padding-top: 5%;
+}
+
+.seccion4 .text h2{
     font-size: 2vw;
-    margin-left: 6%;
-    margin-right: 20%;
     color: rgb(255, 255, 255);
-    margin-bottom: 2%;
-    width: 30%;
-    border-top: 2px double rgb(255, 255, 255);
-    border-bottom: 2px double rgb(255, 255, 255);
 }
 
-.seccion4 h3{
+.seccion4 .text h3{
+    padding-top: 1%;
     background: none;
     font-size: 1.5vw;
-    margin-left: 6%;
-    margin-right: 20%;
     color: rgb(240, 240, 240);
+}
+
+.seccion4 .reg_butt{
+    padding-top: 3%;
+    padding-bottom: 5%;
+}
+
+.seccion4 img{
+    background: none;
+    width: 2.5vw;
+    height: 2.5vw;
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+    margin-bottom: -1%;
+    margin-right: 1%;
+}
+
+.seccion4 input{
+    border-style: none;
+    background: rgb(215, 215, 215);
+    padding-left: 1%;
+    margin-bottom: 2%;
+    width: 30vw;
+    height: 2.5vw;
+    border: 2px solid rgb(41, 41, 41);
+    border-radius: 10px 10px 10px 10px;
+    -webkit-border-radius: 10px 10px 10px 10px;
+    -moz-border-radius: 10px 10px 10px 10px;
+    color: rgb(30, 30, 30);
+    font-size: 1.2vw;
+}
+
+.seccion4 .reg_butt button{
+    color: rgb(20, 20, 20);
+    font-size: 1.4vw;
+    background: none;
+    border-radius: 3px;
+    width: 9vw;
+    height: 3vw;
+    background-color: rgb(182, 182, 182);
+    border-color: rgb(182, 182, 182);
+    cursor: pointer;
 }
