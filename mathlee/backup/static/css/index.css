@@ -7,6 +7,7 @@
 }
 nav {
     background:none;
+    color: #1d1f20;
     left: 0;
     position: relative;
     top: 0;
@@ -98,7 +99,7 @@ nav input:checked ~ #overlay {
     -moz-box-shadow: 4px 4px 5px 0px rgba(0,0,0,0.75);
     bottom: 0;
     left: -67.6vw;
-    height: 29vw;
+    height: 50vw;
     position: absolute;
     right: 0;
     top: 0;
@@ -152,7 +153,38 @@ nav input:checked ~ .list {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+* {
+    margin: 0px;
+    padding: 0px;
+    color: wheat;
+    background-color: rgb(105, 23, 168);
+    background-image: url(/static/img/back3.jpg);
+    background-blend-mode:multiply;
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: sans-serif;
+    text-decoration: none;
+}
+
 .header_container {
+    position: fixed;
+
     border: solid;
     border-radius: 1px;
     height: 3.5vw;
@@ -161,11 +193,9 @@ nav input:checked ~ .list {
     margin-bottom: .5%;
     display: flex;
 
-    /*Propiedades para el header constante
     right: 0;
     top: 0;
     left: 0;
-    position: fixed;*/
 }
 
 .header_part_left{
@@ -211,7 +241,7 @@ nav input:checked ~ .list {
     font-size: 1.5vw;
     background: none;
     color: rgb(240, 240, 240);
-    transition: opacity .5s;
+    animation: 1s anim-lineDown ease-out;
     opacity: 0;
     
 }
@@ -220,19 +250,18 @@ nav input:checked ~ .list {
     background: none;
     width: 2.2vw;
     height: 2.2vw;
-    transition: transform 1.5s;
-    transition-delay: .2s;
+    animation: 1.5s anim-lineDown-logo ease-out;
     transform: translatex(80%);
 }
 
 .logo:hover h2{
-    transition: opacity 3s;
+    animation: 1s anim-lineUp ease-out;
     opacity: 1;
     transform: translatex(0%);
 }
 
 .logo:hover img{
-    transition: transform 1s;
+    animation: 1s anim-lineUp-logo ease-out;
     opacity: 1;
     transform: translatex(0%);
 }
@@ -292,3 +321,57 @@ nav input:checked ~ .list {
         transform: translatex(80%);
     }
 }
+
+.rpd {
+    background: none;
+    margin-top: 5%;
+    color: rgb(240, 240, 240);
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    justify-content: space-between;
+    display: flex;
+}
+
+.left {
+    background: none;
+    font-size: 6vw;
+    color: rgb(240, 240, 240);
+    margin-left: 2%;
+}
+
+.right {
+    background: none;
+    font-size: 6vw;
+    color: rgb(240, 240, 240);
+    margin-right: 2%;
+}
+
+.rpd .slide {
+    background: none;
+}
+
+.rpd .slide .title{
+    background: none;
+    margin: 0;
+    padding: 0;
+    color: rgb(240, 240, 240);
+    font-size: 14.5vw;
+}
+
+.rpd .slide .subtitle{
+    background: none;
+    margin-top: -3%;
+    padding: 0;
+    color: rgb(235, 235, 235);
+    font-size: 3.6vw;
+}
+
+.subtext{
+    margin-top: 100%;
+    background: none;
+}
+/*.header_part_left#hed_item {
+    margin: 100px;
+    padding: 5px;
+}*/

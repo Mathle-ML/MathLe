@@ -19,8 +19,11 @@ def index(request):
     ctx = {}
     return render(request, 'html/index.html', ctx)
 
-@login_required
 def dashboard(request):
+
+    if not request.user.is_authenticated:
+        return redirect('login')
+
     doc = loader.get_template('html/dashboard.html')
     ctx = {}
     html = doc.render(ctx)
@@ -58,11 +61,33 @@ def exit(request):
     logout(request)
     return redirect('index')
 
-def register(request):
-    ctx = {
-        'form' : CustomCreationForm(),
-        'haserrors' : False
-    }
+
+
+def regArg(request, usr):
+
+    obj = register(request, usr)
+
+    return obj
+
+def regNoArg(request):
+
+    obj = register(request, None)
+
+    return obj
+
+def register(request, usr):
+    if usr is None:
+        ctx = {
+            'form' : CustomCreationForm(),
+            'haserrors' : False,
+            'usr' : ''
+        }
+    else:
+        ctx = {
+            'form' : CustomCreationForm(),
+            'haserrors' : False,
+            'usr' : usr
+        }
 
     if request.method == 'POST':
         user_creation_form = CustomCreationForm(data=request.POST)
