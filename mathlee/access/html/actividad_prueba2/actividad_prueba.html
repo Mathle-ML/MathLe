@@ -4,63 +4,67 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Actividad 1</title>
-
-    <style>
-        #BarTime {
-            background-color: cornflowerblue;
-            height: 20px;
-            width: 300px;
-        }
-    </style>
-
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/actividades/actividad_rush.css' %}">
+    <link rel="icon" type="image/x-icon" href="{% static 'img/logo.png' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;700&display=swap" rel="stylesheet">
+    <title>Actividad Rush</title>
 </head>
+
+{% include 'encabezado/encabezado.html' %}
+
 <body>
     
-    <div>
+    <div class="titulo">
         <h1>Actividad 1</h1>
         <h2>Sumas y restas</h2>
     </div>
 
-    <div>
+    
 
-        <div id="BarTime"></div>
+    <div class="pr">
+
+        <div id="borde">
+            <div id="BarTime"></div>
+        </div>
 
         <form action="{% url 'resultado' r1 r2 r3 r4 r5 %}" method="get">
-            <div>
+            <div class="pregunta">
                 <p>Cuanto es {{ var1_1 }} + {{ var1_2 }}?</p>
                 <input type="text" name="res1">
             </div>
-            <div>
+            <div class="pregunta">
                 <p>Cuanto es {{ var2_1 }} + {{ var2_2 }}?</p>
                 <input type="text" name="res2">
             </div>
-            <div>
+            <div class="pregunta">
                 <p>Cuanto es {{ var3_1 }} + {{ var3_2 }}?</p>
                 <input type="text" name="res3">
             </div>
-            <div>
+            <div class="pregunta">
                 <p>Cuanto es {{ var4_1 }} + {{ var4_2 }}?</p>
                 <input type="text" name="res4">
             </div>
-            <div>
+            <div class="pregunta">
                 <p>Cuanto es {{ var5_1 }} + {{ var5_2 }}?</p>
                 <input type="text" name="res5">
             </div>
-            <div>
-                <input type="submit" id="terminar" name="Terminar">
+            <div class="btn">
+                <input type="submit" id="terminar" name="Terminar" value="Terminar">
             </div>
         </form>
     </div>
 
     <script>
 
-        var time=30, w = 310;
+        var time=30, w = 100;
         
         function cambia() {                
             time--;
-            w -= 10;
-            document.getElementById("BarTime").style.width = w+'px';
+            w -= 3.4;
+            document.getElementById("BarTime").style.width = w+'%';
             document.getElementById("BarTime").innerHTML = time;
             console.log("time = "+time+" w = "+w);
             if (time <= 0){
@@ -71,7 +75,7 @@
         function terminar() {
             document.getElementById("terminar").click();
         }
-
+        
         function inicio() {
             var i = setInterval(cambia, 1000);
         }

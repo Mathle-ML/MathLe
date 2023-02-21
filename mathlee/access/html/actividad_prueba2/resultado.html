@@ -5,17 +5,41 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Resultado</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/actividades/resultado.css' %}">
+    <link rel="icon" type="image/x-icon" href="{% static 'img/logo.png' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;700&display=swap" rel="stylesheet">
 </head>
+
+{% include 'encabezado/encabezado.html' %}
+
 <body>
     
     <h1>Resultado</h1>
     
-    {% if s != 'No respondiste todas las preguntas, puedes volver a ver estas actividades' %}
-    <p>Tuviste {{ res }} de 5 resupestas correctas </p>
+    {% if s == 'true' %}
+    <div class="ans">
+        <p class="box">{{ res }}/5</p>
+        <p>Resupestas correctas </p>
+        <p>No respondiste todas las preguntas, puedes volver a ver estas actividades</p>
+        <a href={% url 'index' %}>index</a>
+    </div>
+    {% elif bol == 'true' %}
+    <div class="ans">
+        <p class="box">{{ res }}/5</p>
+        <p>Resupestas correctas </p>
+        <p>Necesitas responder mas preguntas correctamente, puedes volver a ver estas actividades</p>
+        <a href={% url 'index' %}>index</a>
+    </div>
     {% else %}
-    <p>Tuviste {{ res }} de 5 resupestas correctas </p>
-    <p>{{ s }}</p>
-    <a href={% url 'index' %}>index</a>
+    <div class="ans">
+        <p class="box">{{ res }}/5</p>
+        <p>Resupestas correctas</p>
+        <p>Bien hecho</p>
+        <a href="{% url 'index' %}">index</a>
+    </div>
     {% endif %}
 
 </body>

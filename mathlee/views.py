@@ -105,6 +105,12 @@ def register(request, usr):
     return render(request, 'html/registration/register.html', ctx)
 
 
+def actividad_T(request):
+
+    return render(request, 'html/actividad_prueba2/actividad_T.html')
+
+
+
 #views de carpeta actividad_prueba2
 def actividad_prueba(request):
 
@@ -135,7 +141,7 @@ def actividad_prueba(request):
         "r5":var5_1 + var5_2,
     }
 
-    return render(request, "actividad_prueba2/actividad_prueba.html", ctx)
+    return render(request, "html/actividad_prueba2/actividad_prueba.html", ctx)
 
 def resultado(request,r1,r2,r3,r4,r5):
 
@@ -146,10 +152,11 @@ def resultado(request,r1,r2,r3,r4,r5):
     res5 = request.GET["res5"]
 
     res = 0
-    s = "string cualquiera"
+    s = "false"
+    bol = "false"
 
     if res1 == "" or res2 == "" or res3 == "" or res4 == "" or res5 == "":
-        s = "No respondiste todas las preguntas, puedes volver a ver estas actividades"
+        s = "true"
     
     if res1 == str(r1):
         res += 1
@@ -162,6 +169,7 @@ def resultado(request,r1,r2,r3,r4,r5):
     if res5 == str(r5):
         res += 1
 
-    print("res =",res)  
+    if res <= 2:
+        bol = "true"
 
-    return render(request, "actividad_prueba2/resultado.html", {"res":res, "s":s})
+    return render(request, "html/actividad_prueba2/resultado.html", {"res":res, "s":s, "bol":bol})
