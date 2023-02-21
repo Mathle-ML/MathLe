@@ -19,7 +19,7 @@ from mathlee.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('index/', index, name='index'),
+    path('', index, name='index'),
     path('dashboard/', dashboard, name='dashboard'),
     path('login/', loginCall, name='login'),
     path('logout/', exit, name='logout'),
