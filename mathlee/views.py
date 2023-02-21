@@ -22,7 +22,7 @@ def index(request):
 def dashboard(request):
 
     if not request.user.is_authenticated:
-        return redirect('login')
+        return redirect('login', "redi=dashboard")
 
     doc = loader.get_template('html/dashboard.html')
     ctx = {}
@@ -30,11 +30,28 @@ def dashboard(request):
 
     return HttpResponse(html)
 
-def loginCall(request):
+def loginArg(request, rdc):
+
+    obj = loginCall(request, rdc)
+
+    return obj
+
+def loginNoArg(request):
+
+    obj = loginCall(request, None)
+
+    return obj
+
+def loginCall(request, rdc):
+    if rdc is None:
+        rdc = "index"
+    else:
+        rdc = rdc.replace("redi=", "")
+
     page = 'login'
 
     if request.user.is_authenticated:
-        return redirect('index')
+        return redirect(rdc)
 
     if request.method == 'POST':
         username = request.POST['username'].lower()
@@ -50,12 +67,13 @@ def loginCall(request):
 
         if user is not None:
             login(request, user)
-            return redirect(request.GET['next'] if 'next' in request.GET else 'index')
+            return redirect(request.GET['next'] if 'next' in request.GET else rdc)
 
         else:
             messages.error(request, 'El usuario o contraseña son incorrectos')
 
     return render(request, 'html/registration/login.html')
+
 
 def exit(request):
     logout(request)
