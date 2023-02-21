@@ -13,6 +13,19 @@
     text-decoration: none;
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 .rpd {
     margin-top: 8%;
     margin-bottom: 10%;
@@ -23,6 +36,67 @@
     justify-content: space-between;
     display: flex;
     background: none;
+    height: 25vw;
+    width: 100%;
+}
+
+@keyframes anim-left-end {
+    from {
+        transform: translatex(0%);
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+        transform: translatex(-70%);
+    }
+}
+@keyframes anim-left-start {
+    from {
+        transform: translatex(70%);
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+        transform: translatex(0%);
+    }
+}
+
+@keyframes anim-right-end {
+    from {
+        transform: translatex(0%);
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+        transform: translatex(70%);
+    }
+}
+
+@keyframes anim-right-start {
+    from {
+        transform: translatex(-70%);
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+        transform: translatex(0%);
+    }
+}
+
+@keyframes boom {
+    0%{
+        font-size: 6vw;
+    }
+    50%{
+        font-size: 7vw;
+    }
+    100%{
+        font-size: 6vw;
+    }
+}
+
+.cont {
+    background: none;
 }
 
 .left {
@@ -30,6 +104,14 @@
     font-size: 6vw;
     color: rgb(240, 240, 240);
     margin-left: 2%;
+    cursor: pointer;
+    user-select: none;
+}
+
+
+
+#left{
+    display: none;
 }
 
 .right {
@@ -37,6 +119,12 @@
     font-size: 6vw;
     color: rgb(240, 240, 240);
     margin-right: 2%;
+    cursor: pointer;
+    user-select: none;
+}
+
+#right {
+    display: none;
 }
 
 .rpd .slide {
@@ -58,6 +146,22 @@
     color: rgb(235, 235, 235);
     font-size: 3.6vw;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /*SECCION 1---------------------*/
@@ -220,3 +324,20 @@
     border-color: rgb(182, 182, 182);
     cursor: pointer;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
