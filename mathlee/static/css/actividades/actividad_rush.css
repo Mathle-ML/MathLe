@@ -1,12 +1,13 @@
 * {
-    font-family: 'Montserrat';
     margin: 0px;
     padding: 0px;
     background-color: rgb(105, 23, 168);
     background-image: url(/static/img/back3.jpg);
-    background-blend-mode: multiply;
-    background-repeat: repeat;
+    background-blend-mode:multiply;
+    background-repeat: no-repeat;
     background-size: cover;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-decoration: none;
 }
 
 div, h1, h2, form, p, input {
