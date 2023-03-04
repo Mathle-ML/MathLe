@@ -1,0 +1,65 @@
+<!DOCTYPE django-html>
+
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Mathle - Dashboard</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/dashboard.css' %}">
+    <link rel="icon" type="image/x-icon" href="{% static 'img/logo.png' %}">
+</head>
+
+{% include 'encabezado/encabezado.html' %}
+
+<body>
+    <div id="dsh_cont">
+        <div id="dsh_lft_slide">
+            <input type="checkbox" id="cntOpen">
+            <div class="dLCnt" id="dLCnt_1">
+                <input class="cbTopic" id="cb-lvl1" type="checkbox">
+                <label for="cb-lvl1"><h2 class="optTit">Perfil</h2></label>
+                <div class="options" id="temas-1">
+                    <h2>Configuracion</h2>
+                    <h2>Lenguaje</h2>
+                    <h2>Cambiar contraseña</h2>
+                </div>
+            </div>
+            <div class="dLCnt" id="dLCnt_2">
+                <input class="cbTopic" id="cb-lvl2" type="checkbox">
+                <label for="cb-lvl2"><h2 class="optTit">Estadisticas</h2></label>
+                <div class="options" id="temas-2">
+                    <h2>Tema 1</h2>
+                    <h2>Tema 2</h2>
+                    <h2>Tema 3</h2>
+                </div>
+            </div>
+            <div class="dLCnt" id="dLCnt_3">
+                <input class="cbTopic" id="cb-lvl3" type="checkbox">
+                <label for="cb-lvl3"><h2 class="optTit">Logros</h2></label>
+                <div class="options" id="temas-3">
+                    <h2>Tema 1</h2>
+                    <h2>Tema 2</h2>
+                    <h2>Tema 3</h2>
+                </div>
+            </div>
+            <div class="dLCnt" id="dLCnt_4">
+                <input class="cbTopic" id="cb-lvl4" type="checkbox">
+                <label for="cb-lvl4"><h2 class="optTit">Notificaciones</h2></label>
+                <div class="options" id="temas-4">
+                    <h2>Tema 1</h2>
+                    <h2>Tema 2</h2>
+                    <h2 class="last">Tema 3</h2>
+                </div>
+            </div>
+            <div class="dLCnt" id="dLCnt_5">
+                <input class="cbTopic" id="cb-lvl4" type="checkbox">
+                <label for="cb-lvl4"><h2 class="optTit">Cerrar sesion</h2></label>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script src="{% static 'js/slide_dash.js' %}"></script>

@@ -1,0 +1,172 @@
+<!DOCTYPE django-html>
+
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Mathle - Dashboard</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/dashboard.css' %}">
+    <link rel="icon" type="image/x-icon" href="{% static 'img/logo.png' %}">
+</head>
+
+{% include 'encabezado/encabezado_dashboard.html' %}
+
+<body id="global">
+    <input id="errorCB" type="checkbox">
+    <div id="error">
+        <label for="errorCB">Tranquilo amigo! termina el nivel <br>
+            anterior para acceder a este.<br><br>
+            Pronto pordras progresar ;)
+        </label>
+    </div>
+    <div id="dsh_cont">
+        <div id="dsh_lft_slide">
+            <nav class="planeacion" data-aos="fade-right">
+                <div class="lvl-1">
+                    <input class="cbTopic" id="cb-lvl1" type="checkbox">
+                    <label for="cb-lvl1"><h2>Perfil</h2></label>
+                    <div class="temas" id="temas-1">
+                        <h2>Editar perfil</h2>
+                        <h2>Privacidad</h2>
+                        <h2>Ayuda</h2>
+                    </div>
+                </div>
+                <div class="lvl-2">
+                    <input class="cbTopic" id="cb-lvl2" type="checkbox">
+                    <label for="cb-lvl2"><h2>Logros</h2></label>
+                    <div class="temas" id="temas-2">
+                        <h2>Por niveles</h2>
+                        <h2>Por temas</h2>
+                        <h2>Todos</h2>
+                    </div>
+                </div>
+                <div class="lvl-3">
+                    <input class="cbTopic" id="cb-lvl3" type="checkbox">
+                    <label for="cb-lvl3"><h2>Estadisticas</h2></label>
+                    <div class="temas" id="temas-3">
+                        <h2>Por niveles</h2>
+                        <h2>Por temas</h2>
+                        <h2>Todas</h2>
+                    </div>
+                </div>
+                <div class="lvl-5" onclick="window.location = '/logout'">
+                    <input class="cbTopic" id="cs" type="checkbox">
+                    <label for="cb-lvl5"><h2>Cerrar sesion</h2></label>
+                </div>
+            </nav>
+        </div>
+        <div class="main" id="niveles">
+            {% include 'html/paneles/layouts/levels_layout.html' %}
+        </div>
+        <div class="main" id="temas">
+            {% include 'html/paneles/layouts/topics_layout.html' %}
+        </div>
+        <div class="main" id="act">
+            {% include 'html/paneles/layouts/act_layout.html' %}
+        </div>
+    </div>
+</body>
+
+<script src="{% static 'js/slide_dash.js' %}"></script>
+
+<script>
+    /*const a = document.getElementById("error");
+    a.innerHTML = 'new text';
+    a.style.fontSize = '2vw';*/
+    const global = document.getElementById('global');
+    const dashboard = document.getElementById('dsh_cont');
+    const lvl_elements = document.getElementsByClassName('lvl');
+    const tpc_elements = document.getElementsByClassName('topic');
+    const errorCB = document.getElementById('errorCB');
+    const error = document.getElementById('error');
+    const tit_elements = document.getElementsByClassName('lvlTit');
+    const niveles = document.getElementById('niveles');
+    const temas = document.getElementById('temas');
+    const actDiv = document.getElementById('act');
+    const regresar = document.getElementById('regresar');
+
+    global.setAttribute('layout', 'niveles');
+
+    errorCB.setAttribute('toV', 1);
+    errorCB.child
+
+    for(var i = 1; i<lvl_elements.length;i++){
+        if(i>0){
+            lvl_elements.item(i).firstElementChild.style.display = 'flex';
+        }
+        lvl_elements.item(i).firstElementChild.addEventListener('click', e =>{
+            e.target;
+            
+            if(e.target.style.display === 'flex'){
+                errorCB.checked = true;
+            }
+            clearTimeout(errorCB.getAttribute('toV'));
+            h = setTimeout(() => {
+                errorCB.checked = false;
+            }, 3000);
+            errorCB.setAttribute('toV', h);
+        });
+        tpc_elements.item(i).firstElementChild.addEventListener('click', e =>{
+            e.target;
+            if(e.target.style.display === 'flex'){
+                errorCB.checked = true;
+            }
+            clearTimeout(errorCB.getAttribute('toV'));
+            h = setTimeout(() => {
+                errorCB.checked = false;
+            }, 3000);
+            errorCB.setAttribute('toV', h);
+        });
+    }
+
+    for(var i = 0; i<tit_elements.length;i++){
+        tit_elements.item(i).addEventListener('click', e => {
+            e.target;
+            if(e.target.getAttribute('retype') === 'nivel'){
+                niveles.style.display = 'none';
+                temas.style.display = 'block'
+                dashboard.style.height = '180vw';
+                for(var i = 0; i<tpc_elements.length;i++){
+                    if(i===0){
+                        tpc_elements.item(i).firstElementChild.style.display = 'none';
+                    }else{
+                        tpc_elements.item(i).firstElementChild.style.display = 'flex';
+                    }
+                }
+                global.setAttribute('layout', 'temas');
+            }
+            if(e.target.getAttribute('retype') === 'topic'){
+                temas.style.display = 'none';
+                actDiv.style.display = 'block'
+                dashboard.style.height = '55vw';
+                for(var i = 0; i<tpc_elements.length;i++){
+                    if(i===0){
+                        tpc_elements.item(i).firstElementChild.style.display = 'none';
+                    }else{
+                        tpc_elements.item(i).firstElementChild.style.display = 'flex';
+                    }
+                }
+                global.setAttribute('layout', 'actDiv');
+            }
+        });
+    }
+
+    regresar.addEventListener('click', e=>{
+        e.target;
+        if(global.getAttribute('layout') === 'temas'){
+            niveles.style.display = 'block';
+            temas.style.display = 'none';
+            dashboard.style.height = '65vw';
+            global.setAttribute('layout', 'niveles');
+        }
+        if(global.getAttribute('layout') === 'actDiv'){
+            temas.style.display = 'block';
+            actDiv.style.display = 'none';
+            dashboard.style.height = '180vw';
+            global.setAttribute('layout', 'temas');
+        }
+    });
+</script>

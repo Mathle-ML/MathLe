@@ -24,11 +24,7 @@ def dashboard(request):
     if not request.user.is_authenticated:
         return redirect('login', "redi=dashboard")
 
-    doc = loader.get_template('html/dashboard.html')
-    ctx = {}
-    html = doc.render(ctx)
-
-    return HttpResponse(html)
+    return render(request, 'html/paneles/dashboard.html')
 
 def loginArg(request, rdc):
 
@@ -43,6 +39,10 @@ def loginNoArg(request):
     return obj
 
 def loginCall(request, rdc):
+
+    if request.user.is_authenticated:
+        return redirect('dashboard')
+
     if rdc is None:
         rdc = "index"
     else:
@@ -54,7 +54,7 @@ def loginCall(request, rdc):
         return redirect(rdc)
 
     if request.method == 'POST':
-        username = request.POST['username'].lower()
+        username = request.POST['username']
         password = request.POST['password']
 
         try:
@@ -94,6 +94,9 @@ def regNoArg(request):
     return obj
 
 def register(request, usr):
+    if request.user.is_authenticated:
+        return redirect('dashboard')
+
     if usr is None:
         ctx = {
             'form' : CustomCreationForm(),

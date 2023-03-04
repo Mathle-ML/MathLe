@@ -1,6 +1,46 @@
 @import url(https://use.fontawesome.com/releases/v5.0.6/css/all.css);
 @import url(https://fonts.googleapis.com/css?family=Oswald:400|Raleway:400,700,400italic,700italic);
 
+
+#regresar {
+    display: flex;
+    justify-content: right;
+    background: none;
+    width: 4%;
+    margin-left: 80%;
+    cursor: pointer;
+}
+
+.header_part_right .hdr_rgr{
+    background: transparent;
+    
+    font-size: 16px;
+    color: #CACACA;
+    transform: translateX(80%);
+    opacity: 0;
+    transition: transform .5s .1s, opacity .3s;
+}
+.header_part_right:hover .hdr_rgr{
+    opacity: 1;
+    transform: translateX(-10%);
+    transition: transform .5s, opacity .3s .2s;
+}
+
+.header_part_right img{
+    background: transparent;
+    margin: 0;
+    padding: 0;
+    width: 1.3vw;
+    height: 1.3vw;
+    transition: width .5s, height .5s;
+}
+
+.header_part_right:hover img{
+    width: 1.5vw;
+    height: 1.5vw;
+    transition: width .5s, height .5s;
+}
+
 .container{
     background: none;
 }
@@ -179,7 +219,7 @@ nav input:checked ~ .list {
     background: none;
     margin: auto;
     display: flex;
-    justify-content: right;
+    justify-content: center;
     width: 33%;
 }
 
