@@ -6,10 +6,68 @@
     background-blend-mode: multiply;
     background-repeat: repeat;
     background-size: cover;
-    color: white;
 }
 
 h1, h2, div, p {
     background: none;
 }
 
+h1, h2 {
+    color: white;
+    text-align: center;
+}
+
+h1 {
+    font-size: 2.5vw;
+}
+
+h2 {
+    font-size: 1.8vw;
+}
+
+.titulo {
+    margin-top: 2%;
+}
+
+
+.cuadro {
+    margin: 3% 8% 8%;
+    min-height: 27vh;
+    min-width: 85vw;
+    background-color: white;
+    border-radius: 20px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    box-shadow: 0 5px 10px -5px rgba(0, 0, 0, 0.568);
+}
+
+.cuadro p {
+    margin: 0% 2%;
+    font-size: 1.2vw;
+}
+
+.cuadro-video {
+    margin: 3% 35% 8%;
+    min-height: 27vh;
+    min-width: 35vw;
+    background-color: white;
+    border-radius: 20px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    box-shadow: 0 5px 10px -5px rgba(0, 0, 0, 0.568);
+}
+
+.video {
+    background: none;
+    width: 50vw;
+    height: 50vh;
+    border-radius: 20px;
+}

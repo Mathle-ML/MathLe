@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     {% load static %}
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'css/actividades/actividad_t.css' %}">
     <link rel="icon" type="image/x-icon" href="{% static 'img/logo.png' %}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,11 +17,23 @@
 {% include 'encabezado/encabezado.html' %}
 
 <body>
-    <div>
+    <div class="titulo">
         <h1>Actividad teorica</h1>
         <h2>Subtitulo</h2>
     </div>
-    <div>
+    <div class="cuadro" data-aos="flip-down">
+        <p>
+            Explicacion:
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque laoreet, est consectetur tempus suscipit, 
+            enim arcu viverra nunc, eget bibendum diam magna a quam. Vestibulum non felis ante. Etiam sit amet pretium est, 
+            sed tempor arcu. Phasellus eu risus a enim tincidunt iaculis. Vestibulum vehicula orci interdum nibh sollicitudin interdum. 
+            Donec fringilla felis eget felis eleifend, vel imperdiet magna consectetur. Fusce eleifend ipsum non nunc rhoncus porttitor. 
+            Duis vel purus eros. Duis ut mi magna. Suspendisse ut eros accumsan, cursus turpis ac, gravida leo.
+        </p>
+        <p class="click">Click aqui</p>
+    </div>
+
+    <div class="cuadro" data-aos="flip-up">
         <p>
             Explicacion:
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque laoreet, est consectetur tempus suscipit, 
@@ -30,5 +43,30 @@
             Duis vel purus eros. Duis ut mi magna. Suspendisse ut eros accumsan, cursus turpis ac, gravida leo.
         </p>
     </div>
+
+    <div class="cuadro-video" data-aos="flip-down">
+        <video autoplay loop muted class="video">
+            <source src="{% static 'videos/5+5.mp4' %}" type="video/mp4">
+        </video>
+    </div>
+
+    <div class="cuadro" data-aos="flip-up">
+        <p>
+            Explicacion:
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque laoreet, est consectetur tempus suscipit, 
+            enim arcu viverra nunc, eget bibendum diam magna a quam. Vestibulum non felis ante. Etiam sit amet pretium est, 
+            sed tempor arcu. Phasellus eu risus a enim tincidunt iaculis. Vestibulum vehicula orci interdum nibh sollicitudin interdum. 
+            Donec fringilla felis eget felis eleifend, vel imperdiet magna consectetur. Fusce eleifend ipsum non nunc rhoncus porttitor. 
+            Duis vel purus eros. Duis ut mi magna. Suspendisse ut eros accumsan, cursus turpis ac, gravida leo.
+        </p>
+    </div>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+      </script>
 </body>
 </html>

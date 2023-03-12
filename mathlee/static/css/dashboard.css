@@ -6,10 +6,10 @@
     margin: 0px;
     padding: 0px;
     color: wheat;
-    /*background-color: rgb(105, 23, 168);
-    background-image: url(/static/img/back3.jpg);*/
-    background: none;
-    background-image: linear-gradient( 83.2deg,  rgba(150,93,233,1) 10.8%, rgba(99,88,238,1) 94.3% );
+    background-color: rgb(105, 23, 168);
+    background-image: url(/static/img/back3.jpg);
+    /*background: none;
+    background-image: linear-gradient( 83.2deg,  rgba(150,93,233,1) 10.8%, rgba(99,88,238,1) 94.3% );*/
     background-blend-mode:multiply;
     background-repeat: no-repeat;
     background-size: cover;
@@ -31,12 +31,9 @@
 
 #dsh_lft_slide{
     background: none;
-    background-color: rgb(230, 230, 230);
     width: 22%;
     height: 100%;
-
     border-radius: 20px; 
-
     box-shadow: 6px 0px 15px -5px rgba(0,0,0,0.568);
     -webkit-box-shadow: 6px 0px 15px -5px /*6px 0px 5px -1px*/ rgba(0,0,0,0.58);
     -moz-box-shadow: 6px 0px 15px -5px rgba(0,0,0,0.568);
@@ -62,12 +59,12 @@
     margin: .1%;
     margin-top: 2px;
     font-size: 1.5vw;
-    color: rgb(100,100,100);
+    color: black;
 }
 
 #dsh_lft_slide nav #closeSession:hover{
     background: none;
-    background-color: rgb(160, 160, 160);
+    background-color: black;
     height: 3vw;
 }
 
@@ -79,7 +76,7 @@
     width: 100%;
     height: 100%;
     text-align: center;
-    background-color: rgb(200, 200, 200);
+    background-color: white;
     border-radius: 18px 0px 0px 18px;
     -webkit-border-radius: 18px 0px 0px 18px;
     -moz-border-radius: 18px 0px 0px 18px;
@@ -90,78 +87,84 @@
 }
 
 #dsh_lft_slide label{
-    width: 100%;
+    width: 97%;
     height: 4vw;
     padding: 0;
-    padding-top: 4%;
-    padding-bottom: -4%;
+    background: none;
+    margin: -2px;
+    padding: 5%;
+    padding-right: 0;
     font-size: 1.5vw;
+    color: black;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+
+    transition: all 0.4s ease
 }
 
-#dsh_lft_slide .lvl-1 label:hover{
+#dsh_lft_slide label:hover {
     font-size: 1.6vw;
     background: none;
-    background-color: rgb(160, 160, 160);
-    border-radius: 17px 0px 0px 0px;
-    -webkit-border-radius: 17px 0px 0px 0px;
-    -moz-border-radius: 17px 0px 0px 0px;
+    color: rgb(119, 236, 146);
+    padding-right: 0;
+
+    transition: all 0.2s ease
 }
 
-#dsh_lft_slide label:hover{
-    font-size: 1.6vw;
+#dsh_lft_slide .lvl-1 label:hover {
+    border-radius: 16px 0px 0px 0px;
+    -webkit-border-radius: 16px 0px 0px 0px;
+    -moz-border-radius: 16px 0px 0px 0px;
+    padding-right: 0;
+}
+
+#dsh_lft_slide h2 {
     background: none;
-    background-color: rgb(160, 160, 160);
+    margin: -2px;
+    padding: 5%;
+    font-size: 1.5vw;
 }
 
 #dsh_lft_slide input{
     display: none;
 }
 
-#dsh_lft_slide nav h2 {
-    background: none;
-    margin: -2px;
-    padding: 5%;
-    font-size: 1.5vw;
-    color: rgb(100,100,100);
-}
-
-#dsh_lft_slide nav .temas h2:hover{
-    background-color: rgb(151, 60, 144);
-}
-
 .temas{
     height: 0;
-    background-color: rgb(120, 120, 120);
     transition: height .2s, background-color .2s;
     transition-delay: .1s;
 }
 
 #dsh_lft_slide nav input + label + .temas > h2{
     animation: .1s desv ease-out;
-    color:rgb(200, 200, 200);
+    color:white;
     opacity: 0;
 }
 
 #dsh_lft_slide nav .lvl-1 input[type=checkbox]:checked + label{
-    display: block;
-    font-size: 1.6vw;
     background: none;
-    background-color: rgb(160, 160, 160);
+    background-color: black;
     border-radius: 16px 0px 0px 0px;
     -webkit-border-radius: 16px 0px 0px 0px;
     -moz-border-radius: 16px 0px 0px 0px;
+    color: white;
 }
 
 #dsh_lft_slide nav input[type=checkbox]:checked + label{
-    display: block;
-    font-size: 1.6vw;
     background: none;
-    background-color: rgb(160, 160, 160);
+    background-color: black;
+    color: white;
 }
 #dsh_lft_slide nav input[type=checkbox]:checked + label + .temas{
     height: 9.6vw;
-    background-color: rgb(120, 120, 120);
+    background-color: black;
     transition: height .2s, background-color .2s;
+}
+
+#dsh_lft_slide nav .temas h2:hover{
+    background-color: rgb(119, 236, 146);
+    color: black;
 }
 
 @keyframes desv {
@@ -184,7 +187,6 @@
 
 #dsh_lft_slide nav input[type=checkbox]:checked + label + .temas > h2{
     animation: .4s apar ease-out;
-    color:rgb(200, 200, 200);
     opacity: 1;
 }
 
@@ -193,12 +195,11 @@
 .lvlTit{
     height: 25%;
     cursor: pointer;
-    transition: font-size .2s;
 }
 
 .lvlTit:hover{
-    color: rgb(150, 150, 150);
-    text-decoration: underline;
+    color: rgb(119, 236, 146);
+    text-decoration: none;
     font-size: 1.52vw;
 }
 
@@ -324,8 +325,7 @@
     font-size: 1.5vw;
     margin-top: 4%;
     margin-bottom: -4%;
-    color: rgb(80, 80, 80);
-    width: 32%;
+    color: black;
     margin-right: 10%;
 }
 
@@ -353,7 +353,7 @@
     border-radius: 20px 0px 0px 20px;
     -webkit-border-radius: 20px 0px 0px 20px;
     -moz-border-radius: 20px 0px 0px 20px;
-    background-color:chartreuse;
+    background-color:rgb(119, 236, 146);
     width: 80%;
     height: 2vw;
 }
@@ -370,8 +370,8 @@
     cursor: pointer;
     display: none;
     position: absolute;
-    width: 73.1%;
-    height: 33.3%;
+    width: 73.7vw;
+    height: 25vh;
     background: none;
     background-color: rgba(75, 75, 75, 0.600);
     justify-content: center;
@@ -381,7 +381,7 @@
     padding-top: 2%;
     padding-bottom: -2%;
     background: none;
-    height: 12vw;
+    height: 20vh;
     width: 12vw;
     transition: height .5s, width .5s;
 }
@@ -390,7 +390,7 @@
     padding-top: 2%;
     padding-bottom: -2%;
     background: none;
-    height: 13vw;
+    height: 23vh;
     width: 13vw;
     transition: height .5s, width .5s;
 }
