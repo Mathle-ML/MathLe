@@ -67,7 +67,7 @@
             document.getElementById("BarTime").style.width = w+'%';
             document.getElementById("BarTime").innerHTML = time;
             console.log("time = "+time+" w = "+w);
-            if (time == 100){
+            if (time <= 0){
                 terminar();
             }
         }
