@@ -29,5 +29,6 @@ urlpatterns = [
 
     path('actividad_rush/', actividad_prueba, name='act'),
     path('resultado/<int:r1>/<int:r2>/<int:r3>/<int:r4>/<int:r5>/', resultado, name='resultado'),
-    path('actividad_teorica', actividad_T, name='act_t')
+    path('actividad_teorica/', actividad_T, name='act_t'),
+    path('contactanos/', contactanos, name='contactanos'),
 ]

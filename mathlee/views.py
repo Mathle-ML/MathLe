@@ -126,10 +126,12 @@ def register(request, usr):
     return render(request, 'html/registration/register.html', ctx)
 
 
+def contactanos(request):
+    return render(request, 'html/contactanos.html')
+
+
 def actividad_T(request):
-
     return render(request, 'html/actividad_prueba2/actividad_T.html')
-
 
 
 #views de carpeta actividad_prueba2
