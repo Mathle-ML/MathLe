@@ -12,19 +12,15 @@ import os
 from pathlib import Path
 from django.contrib import messages
 
+def error404(request):
+    return render(request, 'html/error/404.html')
+
 def index(request):
     BASE_DIR = Path(__file__).resolve().parent.parent
     print(str(BASE_DIR) + "asd")
 
     ctx = {}
     return render(request, 'html/index.html', ctx)
-
-def dashboard(request):
-
-    if not request.user.is_authenticated:
-        return redirect('login', "redi=dashboard")
-
-    return render(request, 'html/paneles/dashboard.html')
 
 def loginArg(request, rdc):
 
@@ -126,12 +122,10 @@ def register(request, usr):
     return render(request, 'html/registration/register.html', ctx)
 
 
-def contactanos(request):
-    return render(request, 'html/contactanos.html')
-
-
 def actividad_T(request):
+
     return render(request, 'html/actividad_prueba2/actividad_T.html')
+
 
 
 #views de carpeta actividad_prueba2

@@ -16,11 +16,14 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from mathlee.views import *
+from mathlee import dbViews
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', index, name='index'),
-    path('dashboard/', dashboard, name='dashboard'),
+    path('dashboard/', dbViews.dashboard, name='dashboard'),
+    path('dashboard/<str:lvl>/', dbViews.temas, name='temas'),
+    path('dashboard/<str:lvl>/<str:tma>/', dbViews.actividades, name='actividades'),
     path('login/', loginNoArg, name='login'),
     path('login/<str:rdc>', loginArg, name='login'),
     path('logout/', exit, name='logout'),
@@ -29,6 +32,5 @@ urlpatterns = [
 
     path('actividad_rush/', actividad_prueba, name='act'),
     path('resultado/<int:r1>/<int:r2>/<int:r3>/<int:r4>/<int:r5>/', resultado, name='resultado'),
-    path('actividad_teorica/', actividad_T, name='act_t'),
-    path('contactanos/', contactanos, name='contactanos'),
+    path('actividad_teorica', actividad_T, name='act_t')
 ]

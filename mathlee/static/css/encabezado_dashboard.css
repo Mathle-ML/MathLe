@@ -247,6 +247,7 @@ nav input:checked ~ .list {
 }
 
 .logo h2{
+    font-family: 'Gill Sans MT';
     font-size: 1.5vw;
     background: none;
     color: rgb(240, 240, 240);
