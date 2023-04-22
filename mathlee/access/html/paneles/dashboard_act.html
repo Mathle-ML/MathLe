@@ -18,6 +18,7 @@
 {% include 'encabezado/encabezado_dashboard.html' %}
 
 <body id="global">
+    {{temas.length}}a
     <input id="errorCB" type="checkbox">
     <div id="error">
         <label for="errorCB">Tranquilo amigo! termina el nivel <br>
@@ -61,23 +62,17 @@
             </nav>
         </div>
         <div class="contenedores">
-            {% for k, v in list.items %}
+            {% for a in list%}
             <div class="lvl" id="lvl{{forloop.counter}}" style="height: {{cont_height}}%;">
                 <div id="bloqueado"><img src="{% static 'img/locked.png' %}"></div>
                 <div id="top">
-                    <h2 class="titulo" retype="nivel" onclick="redirect('{{rd}}' + '{{ forloop.counter }}')">{{v.text}}</h2>
+                    <h2 class="titulo" retype="nivel" onclick="redirect('{{ forloop.counter }}')">{{a}}</h2>
                     <div class="progreso">
                         <h2>Completado: </h2>
                         <div class="bdcF" id="bdcF1">
                             <div class="bdcE" id="bdcE1"></div>
                         </div> 
                     </div> 
-                </div>
-                <div id="bottom">
-                    <h2 id="titulo">Actividades: </h2>
-                    {% for t in v.bott %}
-                        <h2 class="tituloActividad">{{t}}</h2>
-                    {% endfor %}
                 </div>
             </div>
             {% endfor %}
@@ -88,9 +83,8 @@
 <script src="{% static 'js/dashboard/left_bar.js' %}"></script>
 
 <script>
-    
-    function redirect(n){
-            window.location = '/dashboard/' + n;
-    }
 
+    function redirect(n){
+        window.location = '/dashboard/{{ nivel }}/{{ tema }}/act_' + n;
+    }
 </script>

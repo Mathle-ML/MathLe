@@ -1,0 +1,101 @@
+/*@import url("/static/css/dashboard/topic_layout.css");
+@import url("/static/css/dashboard/act_layout.css");*/
+@import url("/static/css/dashboard/levels_layout.css");
+@import url("/static/css/dashboard/left_bar.css");
+
+* {
+    margin: 0px;
+    padding: 0px;
+    background-color: rgb(105, 23, 168);
+    background-image: url(/static/img/back3.jpg);
+    background-blend-mode:multiply;
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family:'Montserrat', sans-serif;
+    color: black;
+}
+
+#dsh_cont{
+    background: none;
+    margin: 4%;
+    width: 92%;
+    /*height: 412vh; 150vh*/
+    display:flex;
+    background-color: white;
+    border-radius: 20px;
+
+    box-shadow: 0 5px 10px -5px rgba(0, 0, 0, 0.568);
+}
+
+#bloqueado {
+    cursor: pointer;
+    display: none;
+    position: absolute;
+    width: 73.1%;
+    height: 34vh;
+    background: none;
+    background-color: rgba(75, 75, 75, 0.600);
+    justify-content: center;
+}
+
+#bloqueado img{
+    padding-top: 2%;
+    padding-bottom: -2%;
+    background: none;
+    height: 25vh;
+    width: 12vw;
+    transition: height .5s, width .5s;
+}
+
+#bloqueado:hover img{
+    padding-top: 2%;
+    padding-bottom: -2%;
+    background: none;
+    height: 28vh;
+    width: 13vw;
+    transition: height .5s, width .5s;
+}
+
+/*----------ERROR LAYOUT------------*/
+#error {
+    display: flex;
+    position: fixed;
+    left: 37%;
+    right: 37%;
+    border-radius: 1vw;
+    width: 25%;
+    height: 0;
+    top: 2%;
+    background: none;
+    background: rgb(255, 41, 41);
+    justify-content: center;
+    z-index: 100;
+    opacity: 0;
+    transition: height .4s 1s, opacity .1s 1.3s;
+}
+#error label{
+    padding-top: 5%;
+    padding-bottom: -5%;
+    color: white;
+    font-size: 1.3vw;
+    background: none;
+    opacity: 0;
+    transition: opacity .5s;
+    transition-delay: .5s;
+}
+
+#errorCB{
+    display: none;
+}
+
+#errorCB[type=checkbox]:checked + #error{
+    height: 18%;
+    opacity: 1;
+    transition: height 1s, opacity .1s;
+}
+
+#errorCB[type=checkbox]:checked + #error > label{
+    opacity: 1;
+    transition: opacity .5s;
+    transition-delay: .5s;
+}

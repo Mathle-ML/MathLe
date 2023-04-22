@@ -1,15 +1,4 @@
 /*-------------Niveles---------------*/
-.lvlTit{
-    height: 25%;
-    cursor: pointer;
-    transition: font-size .2s;
-}
-
-.lvlTit:hover{
-    color: rgb(150, 150, 150);
-    text-decoration: underline;
-    font-size: 1.52vw;
-}
 
 .temas, .actDiv, .actDiv h2, .actDiv .bdc{
     background: none;
@@ -77,7 +66,7 @@
     font-size: 1.5vw;
     margin-top: 4%;
     margin-bottom: -4%;
-    color: black;
+    color: rgb(80, 80, 80);
     width: 32%;
     margin-right: 10%;
 }

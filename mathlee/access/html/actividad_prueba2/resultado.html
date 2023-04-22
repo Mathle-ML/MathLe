@@ -24,21 +24,21 @@
         <p class="box">{{ res }}/5</p>
         <p>Resupestas correctas </p>
         <p>No respondiste todas las preguntas, puedes volver a ver estas actividades</p>
-        <a href={% url 'act_t' %}>Actividad teorica</a>
+        <a href={% url 'index' %}>index</a>
     </div>
     {% elif bol == 'true' %}
     <div class="ans">
         <p class="box">{{ res }}/5</p>
         <p>Resupestas correctas </p>
         <p>Necesitas responder mas preguntas correctamente, puedes volver a ver estas actividades</p>
-        <a href={% url 'act_t' %}>actividad teorica</a>
+        <a href={% url 'index' %}>index</a>
     </div>
     {% else %}
     <div class="ans">
         <p class="box">{{ res }}/5</p>
         <p>Resupestas correctas</p>
         <p>Bien hecho</p>
-        <a href="{% url 'dashboard' %}">Dashboard</a>
+        <a href="{% url 'index' %}">index</a>
     </div>
     {% endif %}
 
