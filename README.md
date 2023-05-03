@@ -12,6 +12,6 @@ Mathle is a website developed by a team that is part of IBM's P-Tech program. Th
 
 ## Screenshots
 
-![App Screenshot](https://raw.githubusercontent.com/NestorNey/MathLe/main/screenshots/Imagen1.gif)
+![App Screenshot](https://raw.githubusercontent.com/Mathle-ML/MathLe/main/screenshots/Imagen1.gif?token=GHSAT0AAAAAACBX53EZPAAXD2OEARLJPLPMZCR4UUA)
 
-![App Screenshot](https://raw.githubusercontent.com/NestorNey/MathLe/main/screenshots/Imagen2.gif)
+![App Screenshot](https://raw.githubusercontent.com/Mathle-ML/MathLe/main/screenshots/Imagen2.gif?token=GHSAT0AAAAAACBX53EZPAAXD2OEARLJPLPMZCR4UUA)
